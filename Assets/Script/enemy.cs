@@ -41,6 +41,7 @@ public class enemy : MonoBehaviour
             Invoke("ChaseStart", 2);
         }
     }
+
     void ChaseStart()
     {
         isChase = true;

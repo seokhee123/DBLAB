@@ -20403,6 +20403,9 @@ MonoBehaviour:
   maxCoin: 99999
   maxHealth: 100
   maxHasGrenades: 4
+  exp: 0
+  level: 1
+  maxExp: 500
   isDead: 0
   skills: 000000
   toggle: 0

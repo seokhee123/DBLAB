@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     public int maxHealth;
     public int maxHasGrenades;
     public int exp;
+    public int level;
+    public double maxExp;
 
     float hAxis;
     float vAxis;
@@ -77,6 +79,7 @@ public class Player : MonoBehaviour
         PlayerPrefs.SetInt("MaxScore", 0);
     }
 
+
     private void Update()
     {
         if(!isDead)
@@ -92,10 +95,20 @@ public class Player : MonoBehaviour
             Swap();
             Toggle();
             Interation();
+            LevelUp();
         }
 
     }
-    
+
+    void LevelUp()
+    {
+        if (exp >= maxExp)
+        {
+            exp = 0;
+            maxExp *= 1.3;
+            level++;
+        }
+    }
     void GetInput()
     {
         hAxis = Input.GetAxisRaw("Horizontal");
