@@ -104,9 +104,11 @@ public class GameManager : MonoBehaviour
         overPanel.SetActive(true);
         curScoreText.text = scoreTxt.text;
 
-        int maxScore = PlayerPrefs.GetInt("MaxScore");
-        if (player.score > maxScore)
+        var Ranking = scoredata.OrderBy(x => x.Value);
+        int max = Ranking.Last().Value;
+        if (player.score > max)
         {
+            
             bestText.gameObject.SetActive(true);
             PlayerPrefs.SetInt("MaxScore", player.score);
         }
