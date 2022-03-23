@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 public class Player : MonoBehaviour
 {
@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
     public GameObject grenadeObj;
     public Camera followCamera;
     public GameManager manager;
-    Score sc = new Score();
     public int ammo;
     public int coin;
     public int health;
@@ -65,11 +64,11 @@ public class Player : MonoBehaviour
     public Weapon equipWeapon;
     public int equipWeaponIndex = -1;
     float fireDelay;
-    Dictionary<int, string> scoredata = new Dictionary<int, string>();
+    Dictionary<string, int> scoredata = new Dictionary<string, int>();
+
     private void Awake()
     {
-        sc.ReadFile("score.txt", scoredata);
-
+        ReadFile("score.txt", scoredata);
         rigid = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
         meshs = GetComponentsInChildren<MeshRenderer>();
@@ -111,6 +110,7 @@ public class Player : MonoBehaviour
         sDown3 = Input.GetButtonDown("Swap3");
         charge = Input.GetButtonUp("ChargeShot");
     }
+    
     void Toggle()
     {
         if (charge && skills[1] == true && equipWeapon.name.Equals("Weapon HandGun"))
@@ -416,22 +416,75 @@ public class Player : MonoBehaviour
             rigid.velocity = Vector3.zero;
       
     }
-    void sort(int score)
+    public void WriteFile(string path, Dictionary<string, int> scoreTable)
     {
-        String now="";
-        now = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
-        var list = scoredata.Keys.ToList();
-        list.Sort();
-        foreach (var key in list)
+
+        StreamWriter sw = new StreamWriter(path);
+        foreach (KeyValuePair<string, int> dic in scoreTable)
         {
-            //scoredata.Remove(key);
-            scoredata.Add(score, now);
+            sw.WriteLine(dic.Key + "," + dic.Value);
+        }
+        sw.Flush();
+        sw.Close();
+    }
+
+    public void ReadFile(string path, Dictionary<string, int> scoreTable)
+    {
+        StreamReader sr = new StreamReader(path);
+        string[] scored = new string[10];
+        int i = 0;
+
+        while (!sr.EndOfStream)
+        {
+            scored[i++] = sr.ReadLine();
+        }
+        sr.Close();
+        for (int a = 0; a < i; a++)
+        {
+            string[] split = scored[a].Split(new string[] { "," }, System.StringSplitOptions.None);
+            scoreTable.Add(split[0], Int32.Parse(split[1]));
         }
     }
+
+    public void InputScore(Dictionary<string, int> scoreTable)
+    {
+        bool chk = false;
+        String now = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+        List<int> list = scoredata.Values.ToList();
+        if (list.Count < 5)
+        {
+            scoredata.Add(now, score);
+        }
+        else
+        {
+            list.Sort();
+            list.Reverse();
+            foreach (int i in list)
+            {
+                if (score > i)
+                {
+                    foreach (KeyValuePair<string, int> dic in scoreTable)
+                    {
+                        if (dic.Value == list[4])
+                        {
+                            scoredata.Remove(dic.Key);
+                            scoredata.Add(now, score);
+                            chk = true;
+                            break;
+                        }
+                    }
+                }
+                if (chk) break;
+            }
+        }
+
+    }
+
     void OnDie()
     {
-        sort(score);
-        sc.WriteFile("score.txt", scoredata);
+        InputScore(scoredata);
+        //ReadFile("score.txt", scoredata);
+        WriteFile("score.txt", scoredata);
         anim.SetTrigger("doDie");
         isDead = true;
         this.gameObject.layer = 16;

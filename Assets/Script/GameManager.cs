@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using System;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
     public GameObject menuPanel;
     public GameObject gamePanel;
     public GameObject overPanel;
+    public GameObject scorePanel;
     public Text maxScoreTxt;
     public Text scoreTxt;
     public Text stageTxt;
@@ -36,6 +39,8 @@ public class GameManager : MonoBehaviour
     public Text playerHealthTxt;
     public Text playerAmmoTxt;
     public Text playerCoinTxt;
+    public Text[] RankTxt;
+    public Text[] DateTxt;
     public Image weapon1Img;
     public Image weapon2Img;
     public Image weapon3Img;
@@ -52,15 +57,17 @@ public class GameManager : MonoBehaviour
     public int bosscnt;
     public int scorecnt;
 
-    Dictionary<int, string> scoreTable = new Dictionary<int, string>();
+    Dictionary<string, int> scoredata = new Dictionary<string, int>();
 
     private void Awake()
 
     {
+        player.ReadFile("score.txt", scoredata);
         enemyList = new List<int>();
-        maxScoreTxt.text = string.Format("{0:n0}", PlayerPrefs.GetInt("MaxScore"));
+        /*maxScoreTxt.text = string.Format("{0:n0}", PlayerPrefs.GetInt("MaxScore"));
         if (PlayerPrefs.HasKey("MaxScore"))
             PlayerPrefs.SetInt("MaxScore", 0);
+        */
     }
 
     public void GameStart()
@@ -72,6 +79,24 @@ public class GameManager : MonoBehaviour
         gamePanel.SetActive(true);
 
         player.gameObject.SetActive(true);
+    }
+
+    public void ScoreBoard()
+    {
+        var Ranking = scoredata.OrderByDescending(x => x.Value);
+        int i = 0;
+        foreach (var dic in Ranking)
+        {
+            RankTxt[i].text = Convert.ToString(dic.Value);
+            DateTxt[i].text = dic.Key;
+            i++;
+        }
+
+        scorePanel.SetActive(true);
+    }
+    public void ScoreOff()
+    {
+        scorePanel.SetActive(false);
     }
     public void GameOver()
     {
@@ -154,7 +179,7 @@ public class GameManager : MonoBehaviour
             }
             for (int index = 0; index < count; index++)
             {
-                int ran = Random.Range(0, 3);
+                int ran = UnityEngine.Random.Range(0, 3);
                 enemyList.Add(ran);
 
                 switch (ran)
@@ -172,7 +197,7 @@ public class GameManager : MonoBehaviour
             }
             while (enemyList.Count > 0)
             {
-                int ranZone = Random.Range(0, 4);
+                int ranZone = UnityEngine.Random.Range(0, 4);
                 GameObject instantEnemy = Instantiate(enemies[enemyList[0]], enemyZones[ranZone].position, enemyZones[ranZone].rotation);
                 enemy enemy = instantEnemy.GetComponent<enemy>();
                 enemy.target = player.transform;
