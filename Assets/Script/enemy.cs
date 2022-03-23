@@ -10,6 +10,7 @@ public class enemy : MonoBehaviour
     public int maxHealth;
     public int curHealth;
     public int score;
+    public int enemyexp;
     public GameManager manager;
     public GameObject dieG;
     public Transform target;
@@ -204,6 +205,7 @@ public class enemy : MonoBehaviour
             nav.enabled = false;
             anim.SetTrigger("doDie");
             player.score += score;
+            player.exp += enemyexp;
             int ranCoin = Random.Range(0, 3);
             Instantiate(coins[ranCoin], transform.position, Quaternion.identity);
 

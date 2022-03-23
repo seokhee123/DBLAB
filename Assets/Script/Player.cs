@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     public int maxCoin;
     public int maxHealth;
     public int maxHasGrenades;
+    public int exp;
 
     float hAxis;
     float vAxis;

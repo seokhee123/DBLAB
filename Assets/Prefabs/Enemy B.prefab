@@ -229,6 +229,7 @@ MonoBehaviour:
   maxHealth: 60
   curHealth: 60
   score: 50
+  enemyexp: 70
   manager: {fileID: 0}
   dieG: {fileID: 6233684938695216571}
   target: {fileID: 0}
@@ -241,6 +242,7 @@ MonoBehaviour:
   isChase: 0
   isAttack: 0
   isDead: 0
+  isDamage: 0
   rigid: {fileID: 9050319609271868254}
   boxCollider: {fileID: 1937805527060562474}
   mat: []

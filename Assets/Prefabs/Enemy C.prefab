@@ -449,6 +449,7 @@ MonoBehaviour:
   maxHealth: 150
   curHealth: 150
   score: 100
+  enemyexp: 100
   manager: {fileID: 0}
   dieG: {fileID: 9131132073105302764}
   target: {fileID: 0}

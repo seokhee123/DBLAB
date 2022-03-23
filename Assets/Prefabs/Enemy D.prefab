@@ -715,7 +715,9 @@ MonoBehaviour:
   maxHealth: 500
   curHealth: 500
   score: 500
+  enemyexp: 1000
   manager: {fileID: 0}
+  dieG: {fileID: 0}
   target: {fileID: 0}
   meleeArea: {fileID: 386754161651399242}
   bullet: {fileID: 6328923829150428151, guid: fb37775cca238eb449372ca1bbd73e7a, type: 3}
@@ -726,12 +728,12 @@ MonoBehaviour:
   isChase: 0
   isAttack: 0
   isDead: 0
+  isDamage: 0
   rigid: {fileID: 6657065869799936312}
   boxCollider: {fileID: 7588509181507557994}
   mat: []
   nav: {fileID: 6023200178708114301}
   anim: {fileID: 6756802070878159094}
-  boss: {fileID: 7010039335826219243}
   missile: {fileID: 5329488615771752711, guid: 978d3626c5f3f614b9dbe908ca0b3e0d, type: 3}
   misslilePortA: {fileID: 5297344811042260513}
   misslilePortB: {fileID: 2830556822268751208}
