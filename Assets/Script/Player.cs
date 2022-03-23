@@ -1,6 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 public class Player : MonoBehaviour
 {
@@ -63,6 +68,8 @@ public class Player : MonoBehaviour
     Dictionary<int, string> scoredata = new Dictionary<int, string>();
     private void Awake()
     {
+        sc.ReadFile("score.txt", scoredata);
+
         rigid = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
         meshs = GetComponentsInChildren<MeshRenderer>();
@@ -409,9 +416,22 @@ public class Player : MonoBehaviour
             rigid.velocity = Vector3.zero;
       
     }
+    void sort(int score)
+    {
+        String now="";
+        now = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+        var list = scoredata.Keys.ToList();
+        list.Sort();
+        foreach (var key in list)
+        {
+            //scoredata.Remove(key);
+            scoredata.Add(score, now);
+        }
+    }
     void OnDie()
     {
-        sc.ReadFile("score.txt", scoredata);
+        sort(score);
+        sc.WriteFile("score.txt", scoredata);
         anim.SetTrigger("doDie");
         isDead = true;
         this.gameObject.layer = 16;

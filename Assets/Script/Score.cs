@@ -6,7 +6,7 @@ using System;
 
 public class Score : MonoBehaviour
 {
-    public void WriteFile(string path, Dictionary<int, string> scoreTable, int score, string date)
+    public void WriteFile(string path, Dictionary<int, string> scoreTable)
     {
         
         StreamWriter sw = new StreamWriter(path);
