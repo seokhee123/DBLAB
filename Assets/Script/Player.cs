@@ -69,7 +69,10 @@ public class Player : MonoBehaviour
     float fireDelay;
     Dictionary<string, int> scoredata = new Dictionary<string, int>();
 
-    private void Awake()
+    public bool[] playerSkill;
+    //private static Player instance;
+
+    void Awake()
     {
         ReadFile("score.txt", scoredata);
         rigid = GetComponent<Rigidbody>();
@@ -80,7 +83,7 @@ public class Player : MonoBehaviour
     }
 
 
-    private void Update()
+    void Update()
     {
         if(!isDead)
         {
@@ -96,12 +99,20 @@ public class Player : MonoBehaviour
             Toggle();
             Interation();
             LevelUp();
+            //Power();
         }
 
     }
 
-    void LevelUp()
+    /*void Power()
     {
+        if(skills[0] == true)
+        {
+
+        }
+    }*/
+    void LevelUp()
+    { 
         if (exp >= maxExp)
         {
             exp = 0;

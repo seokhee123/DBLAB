@@ -47,13 +47,17 @@ public class enemy : MonoBehaviour
         isChase = true;
         anim.SetBool("isWalk", true);
     }
-    private void Update()
+    void Update()
     {
         if (nav.enabled && enemytype != Type.D) { 
             nav.SetDestination(target.position);
             nav.isStopped = !isChase;
         }
-      
+        
+        for(int i = 0; i<manager.enemyCntAll; i++)
+        {
+            //currentDis = Vector3.Distance()
+        }
     }
 
     void FreezeVelocity()

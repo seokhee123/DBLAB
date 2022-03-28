@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     public int enemyCntB;
     public int enemyCntC;
     public int enemyCntD;
+    public int enemyCntAll;
+    
 
     public Transform[] enemyZones;
     public GameObject[] enemies;
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour
     public bool isBoss;
     public int bosscnt;
     public int scorecnt;
+    
 
     Dictionary<string, int> scoredata = new Dictionary<string, int>();
 
@@ -263,11 +266,13 @@ public class GameManager : MonoBehaviour
         StageEnd();
         */
     }
-    private void Update()
+    void Update()
     {
         if (isBattle)
             playTime += Time.deltaTime;
         scorecnt = (int)(player.score / 3000);
+
+        enemyCntAll = enemyCntA + enemyCntA + enemyCntA + enemyCntA;
     }
     private void LateUpdate()
     {
