@@ -8,7 +8,7 @@ public class enemy : MonoBehaviour
     public enum Type { A, B, C, D };
     public Type enemytype;
     public int maxHealth;
-    public int curHealth;
+    public double curHealth;
     public int score;
     public int enemyexp;
     public GameManager manager;
@@ -210,12 +210,22 @@ public class enemy : MonoBehaviour
             nav.enabled = false;
             anim.SetTrigger("doDie");
             player.score += score;
-            player.exp += enemyexp;
-            int ranCoin = Random.Range(0, 3);
-            Instantiate(coins[ranCoin], transform.position, Quaternion.identity);
+            if (!(player.meleeLevel == 20 && player.rangeLevel == 20 && player.healthLevel == 20))
+                player.exp += enemyexp;
+            int ranCoin = Random.Range(0, 100);
+            int itemDrop;
+            if (ranCoin >= 0 && ranCoin <= 24)
+            {
+                itemDrop = 0;
+                Instantiate(coins[itemDrop], transform.position, Quaternion.identity);
 
-
-            switch(enemytype)
+            }
+            else if (ranCoin >= 25 && ranCoin <= 49)
+            {
+                itemDrop = 1;
+                Instantiate(coins[itemDrop], transform.position, Quaternion.identity);
+            }
+            switch (enemytype)
             {
                 case Type.A:
                     manager.enemyCntA--;

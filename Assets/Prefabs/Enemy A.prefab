@@ -409,8 +409,8 @@ MonoBehaviour:
   meleeArea: {fileID: 1597308111541608762}
   bullet: {fileID: 0}
   coins:
-  - {fileID: 1885979252208009595, guid: 929caa800903aeb4a98389525daa5349, type: 3}
-  - {fileID: 5482542863490893585, guid: e2266267925cfa441a0ed381a21b0c64, type: 3}
+  - {fileID: 6733332163783586068, guid: 250f8cbfc39262e45916041287cfd9b7, type: 3}
+  - {fileID: 8151632730504450386, guid: 9df659ca0c5ed904b90bdbec2c685afa, type: 3}
   - {fileID: 6896841729457372931, guid: 2a939391cb4ad8549903c55d86eb93b6, type: 3}
   isChase: 0
   isAttack: 0
