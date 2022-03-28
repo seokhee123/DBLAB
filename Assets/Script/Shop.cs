@@ -11,11 +11,14 @@ public class Shop : MonoBehaviour
     public Player player;
 
     public GameObject[] itemObj;
+    public GameObject Hammer;
     public int[] itemPrice;
     public Transform[] itemPos;
     public string[] TalkData;
     public Text talkText;
     public GameManager manager;
+    public Bullet bullet;
+    public Weapon weapon;
 
     public bool isSkill;
     Player enterPlayer;
@@ -32,6 +35,32 @@ public class Shop : MonoBehaviour
         UIGroup.anchoredPosition = Vector3.down * 1000;
     }
 
+    public void StatUp(int n)
+    {
+            if (n == 0)
+            {
+                player.maxHealth += 10;
+                player.healthLevel++;
+                UIGroup.gameObject.SetActive(false);
+                Time.timeScale = 1;
+            }
+            else if (n == 1)
+            {
+                bullet.damage = 5000;
+                player.rangeLevel++;
+                UIGroup.gameObject.SetActive(false);
+                Time.timeScale = 1;
+            }
+            else if (n == 2)
+            {
+                Hammer.SetActive(true);
+                weapon.damage = 500000;
+                player.meleeLevel++;
+                Hammer.SetActive(false);
+                UIGroup.gameObject.SetActive(false);
+                Time.timeScale = 1;
+            }
+    }
     public void Buy(int index)
     {
         int price = itemPrice[index];

@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
 {
     public enum Type { Melee, Range};
     public Type type;
-    public int damage;
+    public double damage;
     public float rate;
     public int maxAmmo;
     public int curAmmo;

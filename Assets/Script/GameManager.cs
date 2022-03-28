@@ -64,10 +64,6 @@ public class GameManager : MonoBehaviour
     {
         player.ReadFile("score.txt", scoredata);
         enemyList = new List<int>();
-        /*maxScoreTxt.text = string.Format("{0:n0}", PlayerPrefs.GetInt("MaxScore"));
-        if (PlayerPrefs.HasKey("MaxScore"))
-            PlayerPrefs.SetInt("MaxScore", 0);
-        */
     }
 
     public void GameStart()

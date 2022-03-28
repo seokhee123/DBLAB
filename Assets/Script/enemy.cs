@@ -8,7 +8,7 @@ public class enemy : MonoBehaviour
     public enum Type { A, B, C, D };
     public Type enemytype;
     public int maxHealth;
-    public int curHealth;
+    public double curHealth;
     public int score;
     public int enemyexp;
     public GameManager manager;

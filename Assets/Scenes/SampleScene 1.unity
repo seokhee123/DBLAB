@@ -1042,6 +1042,7 @@ MonoBehaviour:
   - {fileID: 8989850888586702440, guid: f8cbbbfc29d05d5488b455b2a25f1d97, type: 3}
   - {fileID: 8801143293235748316, guid: a3c1b0cefb9cb854eb33fa3c1472d807, type: 3}
   - {fileID: 3205279410537515612, guid: 00987556e8c2b4b468c6283400da9cee, type: 3}
+  Hammer: {fileID: 0}
   itemPrice: e8030000b80b0000a00f0000102700001027000010270000
   itemPos:
   - {fileID: 1355921302}
@@ -1052,6 +1053,8 @@ MonoBehaviour:
   - "\uB3C8\uC774 \uBAA8\uC790\uB978\uAC70 \uAC19\uC544..."
   talkText: {fileID: 1994786686}
   manager: {fileID: 811149568}
+  bullet: {fileID: 0}
+  weapon: {fileID: 0}
   isSkill: 1
 --- !u!135 &54596140
 SphereCollider:
@@ -6395,7 +6398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.24695015, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -17650,7 +17653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.882353, g: 0.11764707, b: 0.1764706, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -19669,7 +19672,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -21}
+  m_AnchoredPosition: {x: 16.1, y: -21}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &674085057
@@ -19705,7 +19708,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCCB4 \uB825"
+  m_Text: "\uCCB4\uB825 Up"
 --- !u!222 &674085058
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20395,6 +20398,8 @@ MonoBehaviour:
   grenadeObj: {fileID: 2712080293781481637, guid: 6d741b9eafe50484ca211d2750450704, type: 3}
   followCamera: {fileID: 963194227}
   manager: {fileID: 811149568}
+  StatShop: {fileID: 2114392412}
+  stat: {fileID: 2114392412}
   ammo: 100
   coin: 1000000
   health: 100
@@ -20404,8 +20409,10 @@ MonoBehaviour:
   maxHealth: 100
   maxHasGrenades: 4
   exp: 0
-  level: 1
   maxExp: 500
+  healthLevel: 0
+  meleeLevel: 0
+  rangeLevel: 0
   isDead: 0
   skills: 000000
   toggle: 0
@@ -20480,7 +20487,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 21, y: -102}
+  m_AnchoredPosition: {x: 31, y: -102}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &733116806
@@ -20516,7 +20523,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 200
+  m_Text: 0 / 20
 --- !u!222 &733116807
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22716,9 +22723,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1299027389}
+      - m_Target: {fileID: 2114392416}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: Buy
+        m_MethodName: StatUp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26333,7 +26340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  damage: 30
+  damage: 100
   rate: 0.4
   maxAmmo: 0
   curAmmo: 0
@@ -26454,7 +26461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 21, y: -102}
+  m_AnchoredPosition: {x: 31, y: -102}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1062989154
@@ -26490,7 +26497,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 500
+  m_Text: 0 / 20
 --- !u!222 &1062989155
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26638,7 +26645,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "NPC \uB300\uC0AC 1"
+  m_Text: "\uB808\uBCA8\uC5C5!"
 --- !u!222 &1067119330
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32501,7 +32508,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC218 \uB958 \uD0C4"
+  m_Text: "\uADFC\uAC70\uB9AC Up"
 --- !u!222 &1127751474
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -39236,6 +39243,7 @@ MonoBehaviour:
   - {fileID: 6733332163783586068, guid: 250f8cbfc39262e45916041287cfd9b7, type: 3}
   - {fileID: 8151632730504450386, guid: 9df659ca0c5ed904b90bdbec2c685afa, type: 3}
   - {fileID: 1480231661460611413, guid: 2dbf8698114b862458bd6e2051cec3ce, type: 3}
+  Hammer: {fileID: 0}
   itemPrice: f4010000c800000020030000
   itemPos:
   - {fileID: 85264249}
@@ -39246,6 +39254,8 @@ MonoBehaviour:
   - "\uB3C8\uC774 \uBAA8\uC790\uB978\uB370 \uB2E4\uC2DC \uD655\uC778\uD574\uBD10"
   talkText: {fileID: 1067119329}
   manager: {fileID: 0}
+  bullet: {fileID: 0}
+  weapon: {fileID: 0}
   isSkill: 0
 --- !u!135 &1299027390
 SphereCollider:
@@ -41697,7 +41707,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 21, y: -102}
+  m_AnchoredPosition: {x: 35, y: -102}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1456982211
@@ -41733,7 +41743,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 800
+  m_Text: 0 / 20
 --- !u!222 &1456982212
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -57188,7 +57198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.882353, g: 0.07450981, b: 0.03529412, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -59766,9 +59776,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1299027389}
+      - m_Target: {fileID: 2114392416}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: Buy
+        m_MethodName: StatUp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -60905,9 +60915,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1299027389}
+      - m_Target: {fileID: 2114392416}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: Buy
+        m_MethodName: StatUp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -60989,7 +60999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -21}
+  m_AnchoredPosition: {x: 7, y: -21}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044835113
@@ -61025,7 +61035,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0C4 \uC57D"
+  m_Text: "\uC6D0\uAC70\uB9AC Up"
 --- !u!222 &2044835114
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -62198,13 +62208,14 @@ GameObject:
   - component: {fileID: 2114392413}
   - component: {fileID: 2114392415}
   - component: {fileID: 2114392414}
+  - component: {fileID: 2114392416}
   m_Layer: 5
   m_Name: Item Shop Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2114392413
 RectTransform:
   m_ObjectHideFlags: 0
@@ -62227,7 +62238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1600}
+  m_AnchoredPosition: {x: 0, y: 11}
   m_SizeDelta: {x: 1000, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2114392414
@@ -62268,6 +62279,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114392412}
   m_CullTransparentMesh: 1
+--- !u!114 &2114392416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114392412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff03539873230d4da76cb06250449a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIGroup: {fileID: 2114392413}
+  anim: {fileID: 0}
+  btn: []
+  player: {fileID: 725977968}
+  itemObj: []
+  Hammer: {fileID: 1054279250}
+  itemPrice: 
+  itemPos: []
+  TalkData: []
+  talkText: {fileID: 0}
+  manager: {fileID: 0}
+  bullet: {fileID: 6491714463615967890, guid: b0ddf75e9e9bfdf47b51b652f14ec581, type: 3}
+  weapon: {fileID: 0}
+  isSkill: 0
 --- !u!1 &2121844807
 GameObject:
   m_ObjectHideFlags: 0
