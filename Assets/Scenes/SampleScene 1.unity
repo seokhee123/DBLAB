@@ -1038,11 +1038,12 @@ MonoBehaviour:
   - {fileID: 581798437}
   - {fileID: 944572376}
   player: {fileID: 725977968}
+  melee: {fileID: 0}
+  range: {fileID: 0}
   itemObj:
   - {fileID: 8989850888586702440, guid: f8cbbbfc29d05d5488b455b2a25f1d97, type: 3}
   - {fileID: 8801143293235748316, guid: a3c1b0cefb9cb854eb33fa3c1472d807, type: 3}
   - {fileID: 3205279410537515612, guid: 00987556e8c2b4b468c6283400da9cee, type: 3}
-  Hammer: {fileID: 0}
   itemPrice: e8030000b80b0000a00f0000102700001027000010270000
   itemPos:
   - {fileID: 1355921302}
@@ -1051,10 +1052,8 @@ MonoBehaviour:
   TalkData:
   - "\uC18C\uBAA8\uD488\uB3C4 \uB4E0\uB4E0\uD558\uAC8C \uCC59\uAE30\uB77C\uAD6C"
   - "\uB3C8\uC774 \uBAA8\uC790\uB978\uAC70 \uAC19\uC544..."
-  talkText: {fileID: 1994786686}
+  leveltxt: []
   manager: {fileID: 811149568}
-  bullet: {fileID: 0}
-  weapon: {fileID: 0}
   isSkill: 1
 --- !u!135 &54596140
 SphereCollider:
@@ -20410,9 +20409,9 @@ MonoBehaviour:
   maxHasGrenades: 4
   exp: 0
   maxExp: 500
-  healthLevel: 0
-  meleeLevel: 0
-  rangeLevel: 0
+  healthLevel: 1
+  meleeLevel: 1
+  rangeLevel: 1
   isDead: 0
   skills: 000000
   toggle: 0
@@ -21749,6 +21748,7 @@ MonoBehaviour:
   itemShop: {fileID: 1338813756}
   weaponShop: {fileID: 1437199172}
   startZone: {fileID: 565058487}
+  range: {fileID: 6491714463615967890, guid: b0ddf75e9e9bfdf47b51b652f14ec581, type: 3}
   player: {fileID: 725977968}
   boss: {fileID: 771103956446407204, guid: 3f2a571c3d9673845a299feaa32e523f, type: 3}
   stage: 11
@@ -39239,11 +39239,12 @@ MonoBehaviour:
   anim: {fileID: 648223316}
   btn: []
   player: {fileID: 0}
+  melee: {fileID: 0}
+  range: {fileID: 0}
   itemObj:
   - {fileID: 6733332163783586068, guid: 250f8cbfc39262e45916041287cfd9b7, type: 3}
   - {fileID: 8151632730504450386, guid: 9df659ca0c5ed904b90bdbec2c685afa, type: 3}
   - {fileID: 1480231661460611413, guid: 2dbf8698114b862458bd6e2051cec3ce, type: 3}
-  Hammer: {fileID: 0}
   itemPrice: f4010000c800000020030000
   itemPos:
   - {fileID: 85264249}
@@ -39252,10 +39253,8 @@ MonoBehaviour:
   TalkData:
   - "\uAC15\uB825\uD55C \uBB34\uAE30\uB294 \uC2B9\uB9AC\uC758 \uC9C0\uB984\uAE38\uC774\uC9C0"
   - "\uB3C8\uC774 \uBAA8\uC790\uB978\uB370 \uB2E4\uC2DC \uD655\uC778\uD574\uBD10"
-  talkText: {fileID: 1067119329}
+  leveltxt: []
   manager: {fileID: 0}
-  bullet: {fileID: 0}
-  weapon: {fileID: 0}
   isSkill: 0
 --- !u!135 &1299027390
 SphereCollider:
@@ -39588,7 +39587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -62293,17 +62292,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIGroup: {fileID: 2114392413}
   anim: {fileID: 0}
-  btn: []
+  btn:
+  - {fileID: 866349822}
+  - {fileID: 1969992271}
+  - {fileID: 2025143426}
   player: {fileID: 725977968}
+  melee: {fileID: 1054279250}
+  range: {fileID: 6491714463615967890, guid: b0ddf75e9e9bfdf47b51b652f14ec581, type: 3}
   itemObj: []
-  Hammer: {fileID: 1054279250}
   itemPrice: 
   itemPos: []
   TalkData: []
-  talkText: {fileID: 0}
+  leveltxt:
+  - {fileID: 1062989154}
+  - {fileID: 733116806}
+  - {fileID: 1456982211}
   manager: {fileID: 0}
-  bullet: {fileID: 6491714463615967890, guid: b0ddf75e9e9bfdf47b51b652f14ec581, type: 3}
-  weapon: {fileID: 0}
   isSkill: 0
 --- !u!1 &2121844807
 GameObject:

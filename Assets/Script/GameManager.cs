@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public GameObject itemShop;
     public GameObject weaponShop;
     public GameObject startZone;
+    public GameObject range;
+
     public Player player;
     public Boss boss;
     public int stage;
@@ -68,12 +70,12 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
+        Bullet bullet = range.GetComponent<Bullet>();
+        bullet.damage = 10;
         menuCam.SetActive(false);
         gameCam.SetActive(true);
-
         menuPanel.SetActive(false);
         gamePanel.SetActive(true);
-
         player.gameObject.SetActive(true);
     }
 
@@ -277,7 +279,8 @@ public class GameManager : MonoBehaviour
         playTimeTxt.text = string.Format("{0:00}", hour) + ":" + string.Format("{0:00}", min) + ":" + string.Format("{0:00}", sec);
 
         playerHealthTxt.text = player.health + " / " + player.maxHealth;
-        playerCoinTxt.text = string.Format("{0:n0}", player.coin);
+        playerCoinTxt.text = player.exp + " / " + player.maxExp;
+        //string.Format("{0:n0}", player.coin);
         if (player.equipWeapon == null)
         {
             playerAmmoTxt.text = "- / - ";

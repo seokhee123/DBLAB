@@ -80,7 +80,6 @@ public class Player : MonoBehaviour
         PlayerPrefs.SetInt("MaxScore", 0);
     }
 
-
     private void Update()
     {
         if(!isDead)
@@ -103,6 +102,7 @@ public class Player : MonoBehaviour
 
     void LevelUp()
     {
+        if (meleeLevel == 20 && rangeLevel == 20 && healthLevel == 20) return;
         if (exp >= maxExp)
         {
             Time.timeScale = 0;

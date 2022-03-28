@@ -9,23 +9,27 @@ public class Shop : MonoBehaviour
     public Animator anim;
     public Button[] btn;
     public Player player;
+    public GameObject melee;
+    public GameObject range;
 
     public GameObject[] itemObj;
-    public GameObject Hammer;
     public int[] itemPrice;
     public Transform[] itemPos;
     public string[] TalkData;
-    public Text talkText;
+    public Text[] leveltxt;
     public GameManager manager;
-    public Bullet bullet;
-    public Weapon weapon;
 
     public bool isSkill;
     Player enterPlayer;
-    
+    private void LateUpdate()
+    {
+        leveltxt[0].text = player.healthLevel + " / 20";
+        leveltxt[1].text = player.meleeLevel + " / 20";
+        leveltxt[2].text = player.rangeLevel + " / 20";
+    }
     public void Enter(Player player)
     {
-        talkText.text = TalkData[0];
+        //talkText.text = TalkData[0];
         enterPlayer = player;
         UIGroup.anchoredPosition = Vector3.zero;
     }
@@ -37,29 +41,33 @@ public class Shop : MonoBehaviour
 
     public void StatUp(int n)
     {
-            if (n == 0)
-            {
-                player.maxHealth += 10;
-                player.healthLevel++;
-                UIGroup.gameObject.SetActive(false);
-                Time.timeScale = 1;
-            }
-            else if (n == 1)
-            {
-                bullet.damage = 5000;
-                player.rangeLevel++;
-                UIGroup.gameObject.SetActive(false);
-                Time.timeScale = 1;
-            }
-            else if (n == 2)
-            {
-                Hammer.SetActive(true);
-                weapon.damage = 500000;
-                player.meleeLevel++;
-                Hammer.SetActive(false);
-                UIGroup.gameObject.SetActive(false);
-                Time.timeScale = 1;
-            }
+        if (n == 0)
+        {
+             player.maxHealth += 10;
+             player.healthLevel++;
+             UIGroup.gameObject.SetActive(false);
+             Time.timeScale = 1;
+            if (player.healthLevel == 20) btn[0].interactable = false;
+        }
+        else if (n == 1)
+        {
+            Bullet bullet = range.GetComponent<Bullet>();
+            bullet.damage += 10;
+            player.rangeLevel++;
+            UIGroup.gameObject.SetActive(false);
+            Time.timeScale = 1;
+            if (player.rangeLevel == 20) btn[1].interactable = false;
+        }
+        else if (n == 2)
+        {
+            Weapon weapon = melee.GetComponent<Weapon>();
+            weapon.damage += 10;
+            player.meleeLevel++;
+            UIGroup.gameObject.SetActive(false);
+            Time.timeScale = 1;
+            if (player.meleeLevel == 20) btn[2].interactable = false;
+        }
+        player.health = player.maxHealth;
     }
     public void Buy(int index)
     {
@@ -96,7 +104,7 @@ public class Shop : MonoBehaviour
     }
     IEnumerator Talk()
     {
-        talkText.text = TalkData[1];
+        //talkText.text = TalkData[1];
         yield return new WaitForSeconds(2f);
     }
 }
