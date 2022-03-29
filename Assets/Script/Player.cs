@@ -17,16 +17,20 @@ public class Player : MonoBehaviour
     public GameObject grenadeObj;
     public Camera followCamera;
     public GameManager manager;
+    public GameObject StatShop;
+    public GameObject stat;
     public int ammo;
     public int coin;
-    public int health;
+    public double health;
     public int score;
 
     public int maxAmmo;
     public int maxCoin;
     public int maxHealth;
     public int maxHasGrenades;
-
+    public double exp;
+    public double maxExp;
+    public int healthLevel, meleeLevel, rangeLevel;
     float hAxis;
     float vAxis;
 
@@ -66,7 +70,10 @@ public class Player : MonoBehaviour
     float fireDelay;
     Dictionary<string, int> scoredata = new Dictionary<string, int>();
 
-    private void Awake()
+    public bool[] playerSkill;
+    //private static Player instance;
+
+    void Awake()
     {
         ReadFile("score.txt", scoredata);
         rigid = GetComponent<Rigidbody>();
@@ -76,7 +83,7 @@ public class Player : MonoBehaviour
         PlayerPrefs.SetInt("MaxScore", 0);
     }
 
-    private void Update()
+    void Update()
     {
         if(!isDead)
         {
@@ -91,10 +98,24 @@ public class Player : MonoBehaviour
             Swap();
             Toggle();
             Interation();
+            LevelUp();
+            //Power();
         }
 
     }
-    
+
+    void LevelUp()
+    { 
+        if (meleeLevel == 20 && rangeLevel == 20 && healthLevel == 20) return;
+        if (exp >= maxExp)
+        {
+            Time.timeScale = 0;
+            exp = exp - maxExp;
+            maxExp *= 1.3;
+            StatShop.SetActive(true);
+        }
+    }
+
     void GetInput()
     {
         hAxis = Input.GetAxisRaw("Horizontal");

@@ -8,8 +8,9 @@ public class enemy : MonoBehaviour
     public enum Type { A, B, C, D };
     public Type enemytype;
     public int maxHealth;
-    public int curHealth;
+    public double curHealth;
     public int score;
+    public int enemyexp;
     public GameManager manager;
     public GameObject dieG;
     public Transform target;
@@ -40,18 +41,23 @@ public class enemy : MonoBehaviour
             Invoke("ChaseStart", 2);
         }
     }
+
     void ChaseStart()
     {
         isChase = true;
         anim.SetBool("isWalk", true);
     }
-    private void Update()
+    void Update()
     {
         if (nav.enabled && enemytype != Type.D) { 
             nav.SetDestination(target.position);
             nav.isStopped = !isChase;
         }
-      
+        
+        for(int i = 0; i<manager.enemyCntAll; i++)
+        {
+            //currentDis = Vector3.Distance()
+        }
     }
 
     void FreezeVelocity()
@@ -204,11 +210,22 @@ public class enemy : MonoBehaviour
             nav.enabled = false;
             anim.SetTrigger("doDie");
             player.score += score;
-            int ranCoin = Random.Range(0, 3);
-            Instantiate(coins[ranCoin], transform.position, Quaternion.identity);
+            if (!(player.meleeLevel == 20 && player.rangeLevel == 20 && player.healthLevel == 20))
+                player.exp += enemyexp;
+            int ranCoin = Random.Range(0, 100);
+            int itemDrop;
+            if (ranCoin >= 0 && ranCoin <= 24)
+            {
+                itemDrop = 0;
+                Instantiate(coins[itemDrop], transform.position, Quaternion.identity);
 
-
-            switch(enemytype)
+            }
+            else if (ranCoin >= 25 && ranCoin <= 49)
+            {
+                itemDrop = 1;
+                Instantiate(coins[itemDrop], transform.position, Quaternion.identity);
+            }
+            switch (enemytype)
             {
                 case Type.A:
                     manager.enemyCntA--;

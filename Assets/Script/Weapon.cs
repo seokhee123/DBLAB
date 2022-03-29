@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public enum Type { Melee, Range};
+    public enum Type { Melee, Range, Arrow};
     public Type type;
-    public int damage;
+    public double damage;
     public float rate;
     public int maxAmmo;
     public int curAmmo;
@@ -16,6 +16,8 @@ public class Weapon : MonoBehaviour
     public TrailRenderer trailEffect;
     public Transform bulletPos;
     public GameObject bullet;
+    public Transform arrowPos;
+    public GameObject arrow;
     public Transform bulletCasePos;
     public GameObject bulletCase;
     public Player player;
@@ -46,6 +48,10 @@ public class Weapon : MonoBehaviour
                 curAmmo--;
                 StartCoroutine("Shot");
             }
+        }
+        else if(type == Type.Arrow)
+        {
+            StartCoroutine("Bow");
         }
     }
 
@@ -81,5 +87,13 @@ public class Weapon : MonoBehaviour
         caseRigid.AddTorque(Vector3.up * 10, ForceMode.Impulse);
         yield return null;
 
+    }
+
+    IEnumerator Bow()
+    {
+        GameObject IntantBullet = Instantiate(arrow, arrowPos.position, arrowPos.rotation);
+        Rigidbody arrowRigid = IntantBullet.GetComponent<Rigidbody>();
+        arrowRigid.velocity = arrowPos.forward * 50;
+        yield return null;
     }
 }
