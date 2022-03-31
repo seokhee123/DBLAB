@@ -7,12 +7,12 @@ public class BossMissile : Bullet
 {
     public Transform target;
     NavMeshAgent nav;
-    // Start is called before the first frame update
-    private void Awake()
+     //Start is called before the first frame update
+    void Awake()
     {
         nav = GetComponent<NavMeshAgent>();
     }
-    private void Update()
+    void Update()
     {
         nav.SetDestination(target.position);
     }
