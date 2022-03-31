@@ -80,7 +80,7 @@ public class Bullet : MonoBehaviour
             shortEnemy = enemy.gameObject.transform;
             //float enemyfind = Vector3.Distance(first_bullet,enemy);
             //SpotEnemy = enemy.gameObject.transform.position;
-
+            int i = 0;
         }
     }
     void OnTriggerEnter(Collider other)
