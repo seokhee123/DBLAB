@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
     public string TagName;
     public float shortDis;
     Vector3 SpotEnemy;
-    bool followEnemy=false;
+    bool followEnemy = false;
     Transform shortEnemy;
     //Vector3 distanceEnemy;
     //public float findEnemy = Vector3.
@@ -36,15 +36,15 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        if(followEnemy == true)
+        if (followEnemy == true)
         {
             navi.SetDestination(shortEnemy.position);
             followEnemy = false;
             Debug.Log("follow");
-            
+
         }
-            
-        
+
+
     }
 
     void OnCollisionEnter(Collision collision)
@@ -72,38 +72,37 @@ public class Bullet : MonoBehaviour
                 {
                     enemy = found;
                     shortDis = Distance;
-                    
+
                     //transform.position = enemy;
                 }
             }
             followEnemy = true;
             shortEnemy = enemy.gameObject.transform;
             //float enemyfind = Vector3.Distance(first_bullet,enemy);
-            //SpotEnemy = enemy.gameObject.transform.position;
-            int i = 0;
+            //SpotEnemy = enemy.gameObject.transform.position;        }
         }
-    }
-    void OnTriggerEnter(Collider other)
-    {
-        //findEnemy = findObject.GetComponent<SphereCollider>();
-        // find enemy 콜라이더 체크
-        /*if(player.PlayerSkill[0] != 0 &&  manager.enemyCntA+manager.enemyCntB+manager.enemyCntC+manager.enemyCntD >=2)
+        void OnTriggerEnter(Collider other)
         {
-            //int myindex =   
-        }
-        if (!isMelee && other.gameObject.tag == "Wall")
-        {
-            Destroy(gameObject);
-        }*/
-        //findObject = findEnemy.GetComponent<SphereCollider>();
-        /*if (player.playerSkill[0] == true && manager.enemyCntAll >= 2 && other.gameObject.tag == "Enemy")
-        {
-            Debug.Log("적 확인");
-        }*/
-        if(other.gameObject.tag == "Enemy")
-        {
-            //Vector3.Distance()
-           
+            //findEnemy = findObject.GetComponent<SphereCollider>();
+            // find enemy 콜라이더 체크
+            /*if(player.PlayerSkill[0] != 0 &&  manager.enemyCntA+manager.enemyCntB+manager.enemyCntC+manager.enemyCntD >=2)
+            {
+                //int myindex =   
+            }
+            if (!isMelee && other.gameObject.tag == "Wall")
+            {
+                Destroy(gameObject);
+            }*/
+            //findObject = findEnemy.GetComponent<SphereCollider>();
+            /*if (player.playerSkill[0] == true && manager.enemyCntAll >= 2 && other.gameObject.tag == "Enemy")
+            {
+                Debug.Log("적 확인");
+            }*/
+            if (other.gameObject.tag == "Enemy")
+            {
+                //Vector3.Distance()
+
+            }
         }
     }
 }
