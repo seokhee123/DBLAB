@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     public int coin;
     public double health;
     public int score;
+    //public GameObject Qskill;
+    Qskill qs;
 
     public int maxAmmo;
     public int maxCoin;
@@ -43,7 +45,7 @@ public class Player : MonoBehaviour
     bool sDown1;
     bool sDown2;
     bool sDown3;
-    bool charge;
+    bool qDown;
 
     bool isJump;
     bool isDodge;
@@ -73,6 +75,9 @@ public class Player : MonoBehaviour
     public bool[] playerSkill;
     //private static Player instance;
 
+    public Transform qskillPos;
+    public GameObject qskill;
+
     void Awake()
     {
         ReadFile("score.txt", scoredata);
@@ -96,7 +101,7 @@ public class Player : MonoBehaviour
             Reload();
             Dodge();
             Swap();
-            Toggle();
+            Skills();
             Interation();
             LevelUp();
             //Power();
@@ -129,15 +134,24 @@ public class Player : MonoBehaviour
         sDown1 = Input.GetButtonDown("Swap1");
         sDown2 = Input.GetButtonDown("Swap2");
         sDown3 = Input.GetButtonDown("Swap3");
-        charge = Input.GetButtonUp("ChargeShot");
+        qDown = Input.GetButtonDown("Qskill");
     }
     
-    void Toggle()
+    void Skills()
     {
-        if (charge && skills[1] == true && equipWeapon.name.Equals("Weapon HandGun"))
+        if (qDown)
         {
-            toggle = !toggle;
+            StartCoroutine("Fire");
         }
+        StopCoroutine("Fire");
+    }
+
+    IEnumerator Fire()
+    {
+        GameObject intantQskill = Instantiate(qskill, qskillPos.position, qskillPos.rotation);
+        Rigidbody qskill1Rigid = intantQskill.GetComponent<Rigidbody>();
+        qskill1Rigid.velocity = qskillPos.forward * 50;
+        yield return null;
     }
     void Move()
     {

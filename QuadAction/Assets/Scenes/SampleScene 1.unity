@@ -7826,6 +7826,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219487026}
   m_CullTransparentMesh: 1
+--- !u!1 &219490141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 219490142}
+  m_Layer: 9
+  m_Name: QskillPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &219490142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219490141}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.1, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 725977971}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &221873609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20420,6 +20450,8 @@ MonoBehaviour:
   equipWeapon: {fileID: 0}
   equipWeaponIndex: -1
   playerSkill: 0100000000
+  qskillPos: {fileID: 219490142}
+  qskill: {fileID: 4391530085988653607, guid: fc05e9c51f02e314488b8326ce8c0259, type: 3}
 --- !u!136 &725977969
 CapsuleCollider:
   m_ObjectHideFlags: 0
