@@ -21,11 +21,33 @@ public class Shop : MonoBehaviour
 
     public bool isSkill;
     Player enterPlayer;
+
+    public void Awake()
+    {
+        if (isSkill)
+        {
+            btn[0].interactable = false;
+            btn[1].interactable = false;
+            btn[2].interactable = false;
+        }
+    }
     private void LateUpdate()
     {
-        leveltxt[0].text = player.healthLevel + " / 20";
-        leveltxt[1].text = player.meleeLevel + " / 20";
-        leveltxt[2].text = player.rangeLevel + " / 20";
+        if (isSkill == false)
+        {
+            leveltxt[0].text = player.healthLevel + " / 20";
+            leveltxt[1].text = player.meleeLevel + " / 20";
+            leveltxt[2].text = player.rangeLevel + " / 20";
+        }
+        else if (isSkill == true)
+        {
+            leveltxt[0].text = player.kill[0] + " / 10";
+            leveltxt[1].text = player.kill[1] + " / 10";
+            leveltxt[2].text = player.kill[2] + " / 10";
+            if (player.kill[0] == 10 && !player.skills[0]) btn[0].interactable = true;
+            if (player.kill[1] == 10 && !player.skills[1]) btn[1].interactable = true;
+            if (player.kill[2] == 10 && !player.skills[2]) btn[2].interactable = true;
+        }
     }
     public void Enter(Player player)
     {
@@ -39,33 +61,67 @@ public class Shop : MonoBehaviour
         UIGroup.anchoredPosition = Vector3.down * 1000;
     }
 
+    public void SkillUp(int n)
+    {
+        if (n == 0)
+        {
+            player.skills[0] = true;
+            player.skillpt--;
+            UIGroup.gameObject.SetActive(false);
+            player.isSkill = false;
+            btn[0].interactable = false;
+        }
+        else if (n == 1)
+        {
+            btn[1].interactable = false;
+            player.skills[1] = true;
+            player.skillpt--;
+            UIGroup.gameObject.SetActive(false);
+            player.isSkill = false;
+            btn[1].interactable = false;
+        }
+        else if (n == 2) 
+        {
+            btn[2].interactable = false;
+            player.skills[2] = true;
+            player.skillpt--;
+            UIGroup.gameObject.SetActive(false);
+            player.isSkill = false;
+            btn[2].interactable = false;
+        }
+        else if (n==3)
+        {
+
+        }
+    }
     public void StatUp(int n)
     {
         if (n == 0)
         {
-             player.maxHealth += 10;
-             player.healthLevel++;
-             UIGroup.gameObject.SetActive(false);
-             Time.timeScale = 1;
+            player.maxHealth += 10;
+            player.healthLevel++;
             if (player.healthLevel == 20) btn[0].interactable = false;
+            UIGroup.gameObject.SetActive(false);
+            player.isLevel = false;
+            
         }
         else if (n == 1)
         {
             Bullet bullet = range.GetComponent<Bullet>();
             bullet.damage += 10;
             player.rangeLevel++;
-            UIGroup.gameObject.SetActive(false);
-            Time.timeScale = 1;
             if (player.rangeLevel == 20) btn[1].interactable = false;
+            UIGroup.gameObject.SetActive(false);
+            player.isLevel = false;
         }
         else if (n == 2)
         {
             Weapon weapon = melee.GetComponent<Weapon>();
             weapon.damage += 10;
             player.meleeLevel++;
-            UIGroup.gameObject.SetActive(false);
-            Time.timeScale = 1;
             if (player.meleeLevel == 20) btn[2].interactable = false;
+            UIGroup.gameObject.SetActive(false);
+            player.isLevel = false;
         }
         player.health = player.maxHealth;
     }

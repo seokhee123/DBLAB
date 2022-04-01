@@ -18,11 +18,13 @@ public class Player : MonoBehaviour
     public Camera followCamera;
     public GameManager manager;
     public GameObject StatShop;
-    public GameObject stat;
+    public GameObject SkillShop;
     public int ammo;
     public int coin;
     public double health;
     public int score;
+    public int[] kill;
+    public int skillpt;
 
     public int maxAmmo;
     public int maxCoin;
@@ -53,6 +55,8 @@ public class Player : MonoBehaviour
     bool isBorder;
     bool isDamage;
     bool isShop;
+    public bool isLevel;
+    public bool isSkill;
     public bool isDead;
     public bool[] skills;
     public bool toggle;
@@ -69,9 +73,6 @@ public class Player : MonoBehaviour
     public int equipWeaponIndex = -1;
     float fireDelay;
     Dictionary<string, int> scoredata = new Dictionary<string, int>();
-
-    public bool[] playerSkill;
-    //private static Player instance;
 
     void Awake()
     {
@@ -98,18 +99,28 @@ public class Player : MonoBehaviour
             Swap();
             Toggle();
             Interation();
-            LevelUp();
-            //Power();
         }
 
     }
-
+    void LateUpdate()
+    {
+        LevelUp();
+        SkillUp();
+    }
+    void SkillUp()
+    {
+        if (skillpt > 0)
+        {
+            isSkill = true;
+            SkillShop.SetActive(true);
+        }
+    }
     void LevelUp()
     { 
         if (meleeLevel == 20 && rangeLevel == 20 && healthLevel == 20) return;
         if (exp >= maxExp)
         {
-            Time.timeScale = 0;
+            isLevel = true;
             exp = exp - maxExp;
             maxExp *= 1.3;
             StatShop.SetActive(true);

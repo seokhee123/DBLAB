@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -495,7 +495,7 @@ RectTransform:
   - {fileID: 1904156607}
   - {fileID: 98397468}
   m_Father: {fileID: 350711949}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -6060,7 +6060,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uAD8C \uCD1D"
+  m_Text: "\uC2A4\uD0AC 2"
 --- !u!222 &75518510
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7930,7 +7930,7 @@ GameObject:
   - component: {fileID: 224412814}
   m_Layer: 12
   m_Name: Cube (10)
-  m_TagString: Range
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8027,138 +8027,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!1 &224784110
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 224784111}
-  - component: {fileID: 224784114}
-  - component: {fileID: 224784113}
-  - component: {fileID: 224784112}
-  m_Layer: 5
-  m_Name: Exit Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &224784111
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224784110}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2114392413}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -393, y: 152}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &224784112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224784110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.6226415, g: 0, b: 0.46106988, a: 1}
-    m_SelectedColor: {r: 0.62352943, g: 0, b: 0.46274513, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 224784113}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1299027389}
-        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: Exit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &224784113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224784110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5896226, b: 0.8935096, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1baaa93f3ec48804397f21b2614604d4, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &224784114
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224784110}
-  m_CullTransparentMesh: 1
 --- !u!1 &229174443
 GameObject:
   m_ObjectHideFlags: 0
@@ -14496,13 +14364,14 @@ GameObject:
   - component: {fileID: 350711949}
   - component: {fileID: 350711951}
   - component: {fileID: 350711950}
+  - component: {fileID: 350711952}
   m_Layer: 5
   m_Name: Weapon Shop Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &350711949
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14517,7 +14386,6 @@ RectTransform:
   - {fileID: 1563824718}
   - {fileID: 1998554443}
   - {fileID: 1666704376}
-  - {fileID: 1862906046}
   - {fileID: 736767698}
   - {fileID: 1994786685}
   - {fileID: 29606604}
@@ -14528,7 +14396,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2185}
+  m_AnchoredPosition: {x: 0, y: 11}
   m_SizeDelta: {x: 1000, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &350711950
@@ -14569,6 +14437,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350711948}
   m_CullTransparentMesh: 1
+--- !u!114 &350711952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350711948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff03539873230d4da76cb06250449a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIGroup: {fileID: 350711949}
+  anim: {fileID: 0}
+  btn:
+  - {fileID: 1563824719}
+  - {fileID: 1998554444}
+  - {fileID: 1666704377}
+  player: {fileID: 725977968}
+  melee: {fileID: 0}
+  range: {fileID: 0}
+  itemObj: []
+  itemPrice: 
+  itemPos: []
+  TalkData: []
+  leveltxt:
+  - {fileID: 558973250}
+  - {fileID: 2021940726}
+  - {fileID: 417796890}
+  manager: {fileID: 811149568}
+  isSkill: 1
 --- !u!1 &357094198
 GameObject:
   m_ObjectHideFlags: 0
@@ -14733,7 +14632,7 @@ GameObject:
   - component: {fileID: 368529530}
   m_Layer: 12
   m_Name: Cube (7)
-  m_TagString: Range
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15532,7 +15431,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 21, y: -102}
+  m_AnchoredPosition: {x: 36.99994, y: -102}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &417796890
@@ -15568,7 +15467,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4000
+  m_Text: 0 / 20
 --- !u!222 &417796891
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18005,7 +17904,7 @@ GameObject:
   - component: {fileID: 554503496}
   m_Layer: 12
   m_Name: Cube (11)
-  m_TagString: Range
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18117,7 +18016,7 @@ GameObject:
   - component: {fileID: 557220828}
   m_Layer: 12
   m_Name: Cube (9)
-  m_TagString: Range
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18248,7 +18147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 21, y: -102}
+  m_AnchoredPosition: {x: 36.99994, y: -102}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &558973250
@@ -18284,7 +18183,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1,000
+  m_Text: 0 / 20
 --- !u!222 &558973251
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18544,7 +18443,7 @@ RectTransform:
   - {fileID: 372812976}
   - {fileID: 1899935960}
   m_Father: {fileID: 350711949}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -19060,7 +18959,7 @@ GameObject:
   - component: {fileID: 615911640}
   m_Layer: 12
   m_Name: Cube (15)
-  m_TagString: Range
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20201,7 +20100,7 @@ GameObject:
   - component: {fileID: 714645469}
   m_Layer: 12
   m_Name: Cube (5)
-  m_TagString: Range
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20400,11 +20299,13 @@ MonoBehaviour:
   followCamera: {fileID: 963194227}
   manager: {fileID: 811149568}
   StatShop: {fileID: 2114392412}
-  stat: {fileID: 2114392412}
+  SkillShop: {fileID: 350711948}
   ammo: 100
   coin: 1000000
   health: 100
   score: 0
+  kill: 00000000000000000000000000000000
+  skillpt: 0
   maxAmmo: 999
   maxCoin: 99999
   maxHealth: 100
@@ -20414,12 +20315,13 @@ MonoBehaviour:
   healthLevel: 1
   meleeLevel: 1
   rangeLevel: 1
+  isLevel: 0
+  isSkill: 0
   isDead: 0
-  skills: 000000
+  skills: 00000000
   toggle: 0
   equipWeapon: {fileID: 0}
   equipWeaponIndex: -1
-  playerSkill: 0100000000
 --- !u!136 &725977969
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20564,7 +20466,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 350711949}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21243,7 +21145,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2114392413}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21326,7 +21228,7 @@ GameObject:
   - component: {fileID: 786364001}
   m_Layer: 12
   m_Name: Cube (1)
-  m_TagString: Range
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21620,7 +21522,7 @@ GameObject:
   - component: {fileID: 807835763}
   m_Layer: 12
   m_Name: Cube (13)
-  m_TagString: Range
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23266,7 +23168,7 @@ GameObject:
   - component: {fileID: 892188852}
   m_Layer: 12
   m_Name: Cube (4)
-  m_TagString: Range
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23993,7 +23895,7 @@ RectTransform:
   - {fileID: 1676660506}
   - {fileID: 1929768969}
   m_Father: {fileID: 350711949}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -25522,7 +25424,7 @@ GameObject:
   - component: {fileID: 1018700324}
   m_Layer: 12
   m_Name: Cube
-  m_TagString: Range
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26611,7 +26513,7 @@ RectTransform:
   m_LocalScale: {x: 0.5000123, y: 0.5000123, z: 0.5000123}
   m_Children: []
   m_Father: {fileID: 2114392413}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -33636,8 +33538,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -60, y: -101}
-  m_SizeDelta: {x: 43.75, y: 50}
+  m_AnchoredPosition: {x: -65, y: -101}
+  m_SizeDelta: {x: 68.75, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1234470034
 MonoBehaviour:
@@ -33659,7 +33561,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 771dc6d7f27969a4fb87ecdeab54ae71, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1edd545fe3e8d0f458a679414f885c51, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -34079,8 +33981,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -60, y: -101}
-  m_SizeDelta: {x: 43.75, y: 50}
+  m_AnchoredPosition: {x: -65.000015, y: -101}
+  m_SizeDelta: {x: 68.75, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1280717875
 MonoBehaviour:
@@ -34102,7 +34004,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 771dc6d7f27969a4fb87ecdeab54ae71, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db84109231a678440817c74d1158239b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -34213,7 +34115,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uAE30 \uAD00 \uCD1D"
+  m_Text: "\uC2A4\uD0AC 3"
 --- !u!222 &1288378091
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -42873,7 +42775,7 @@ GameObject:
   - component: {fileID: 1535712206}
   m_Layer: 12
   m_Name: Cube (14)
-  m_TagString: Range
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43134,7 +43036,7 @@ GameObject:
   - component: {fileID: 1556459671}
   m_Layer: 12
   m_Name: Cube (8)
-  m_TagString: Range
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43301,7 +43203,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD574 \uBA38"
+  m_Text: "\uC2A4\uD0AC 1"
 --- !u!222 &1560491944
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -43396,9 +43298,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 54596139}
+      - m_Target: {fileID: 350711952}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: Buy
+        m_MethodName: SkillUp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44373,9 +44275,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 54596139}
+      - m_Target: {fileID: 350711952}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: Buy
+        m_MethodName: SkillUp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44438,7 +44340,7 @@ GameObject:
   - component: {fileID: 1667542520}
   m_Layer: 12
   m_Name: Cube (3)
-  m_TagString: Range
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51103,7 +51005,7 @@ GameObject:
   - component: {fileID: 1744226302}
   m_Layer: 12
   m_Name: Cube (12)
-  m_TagString: Range
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58092,138 +57994,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: b448f0b66ddeb424097cf4c3aede85fd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0b9c2a9cd648c0438e386de5e5e0710, type: 3}
---- !u!1 &1862906045
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1862906046}
-  - component: {fileID: 1862906049}
-  - component: {fileID: 1862906048}
-  - component: {fileID: 1862906047}
-  m_Layer: 5
-  m_Name: Exit Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1862906046
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1862906045}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 350711949}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -393, y: 152}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1862906047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1862906045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.7216981, g: 1, b: 0.9798863, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.12829298, g: 0.23912342, b: 0.8773585, a: 1}
-    m_SelectedColor: {r: 0.12941177, g: 0.2392157, b: 0.87843144, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1862906048}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 54596139}
-        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: Exit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1862906048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1862906045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.6084906, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1baaa93f3ec48804397f21b2614604d4, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1862906049
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1862906045}
-  m_CullTransparentMesh: 1
 --- !u!1 &1882779059
 GameObject:
   m_ObjectHideFlags: 0
@@ -58428,8 +58198,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -60, y: -101}
-  m_SizeDelta: {x: 43.75, y: 50}
+  m_AnchoredPosition: {x: -65.000015, y: -101}
+  m_SizeDelta: {x: 68.75, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1890522896
 MonoBehaviour:
@@ -58451,7 +58221,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 771dc6d7f27969a4fb87ecdeab54ae71, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 364eccac494de714d84a43b20fc715d2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -60033,7 +59803,7 @@ RectTransform:
   m_LocalScale: {x: 0.5000123, y: 0.5000123, z: 0.5000123}
   m_Children: []
   m_Father: {fileID: 350711949}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -60073,7 +59843,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "NPC \uB300\uC0AC 2"
+  m_Text: "\uC2A4\uD0AC\uC744 \uCC0D\uC5B4\uBCF4\uC790!"
 --- !u!222 &1994786687
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -60168,9 +59938,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 54596139}
+      - m_Target: {fileID: 350711952}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: Buy
+        m_MethodName: SkillUp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -60233,7 +60003,7 @@ GameObject:
   - component: {fileID: 1999757107}
   m_Layer: 12
   m_Name: Cube (2)
-  m_TagString: Range
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60791,7 +60561,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 21, y: -102}
+  m_AnchoredPosition: {x: 37, y: -102}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2021940726
@@ -60827,7 +60597,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3000
+  m_Text: 0 / 20
 --- !u!222 &2021940727
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -62084,7 +61854,7 @@ GameObject:
   - component: {fileID: 2104728819}
   m_Layer: 12
   m_Name: Cube (6)
-  m_TagString: Range
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62237,7 +62007,6 @@ RectTransform:
   - {fileID: 866349821}
   - {fileID: 1969992270}
   - {fileID: 2025143425}
-  - {fileID: 224784111}
   - {fileID: 774676827}
   - {fileID: 1067119328}
   m_Father: {fileID: 921696720}

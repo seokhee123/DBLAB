@@ -64,13 +64,17 @@ public class GameManager : MonoBehaviour
 
     Dictionary<string, int> scoredata = new Dictionary<string, int>();
 
-    private void Awake()
+    public void Awake()
 
     {
         player.ReadFile("score.txt", scoredata);
         enemyList = new List<int>();
     }
 
+    public void Upate()
+    {
+
+    }
     public void GameStart()
     {
         Bullet bullet = range.GetComponent<Bullet>();
@@ -274,6 +278,8 @@ public class GameManager : MonoBehaviour
     }
     private void LateUpdate()
     {
+        if (player.isLevel == true||player.isSkill == true) Time.timeScale = 0;
+        else if (player.isLevel == false && player.isSkill == false) Time.timeScale = 1;
         scoreTxt.text = string.Format("{0:n0}", player.score);
         stageTxt.text = "STAGE " + stage;
 
