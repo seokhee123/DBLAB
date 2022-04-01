@@ -41,9 +41,19 @@ public class Shop : MonoBehaviour
         }
         else if (isSkill == true)
         {
-            leveltxt[0].text = player.kill[0] + " / 10";
-            leveltxt[1].text = player.kill[1] + " / 10";
-            leveltxt[2].text = player.kill[2] + " / 10";
+            if (!player.skills[0])
+                leveltxt[0].text = player.kill[0] + " / 10";
+            else
+                leveltxt[0].text = "È¹µæ ¿Ï·á!";
+
+            if (!player.skills[1])
+                leveltxt[1].text = player.kill[1] + " / 10";
+            else
+                leveltxt[1].text = "È¹µæ ¿Ï·á!";
+            if (!player.skills[2])
+                leveltxt[2].text = player.kill[2] + " / 10";
+            else
+                leveltxt[2].text = "È¹µæ ¿Ï·á!";
             if (player.kill[0] == 10 && !player.skills[0]) btn[0].interactable = true;
             if (player.kill[1] == 10 && !player.skills[1]) btn[1].interactable = true;
             if (player.kill[2] == 10 && !player.skills[2]) btn[2].interactable = true;
