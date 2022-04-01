@@ -36,8 +36,8 @@ public class Shop : MonoBehaviour
         if (isSkill == false)
         {
             leveltxt[0].text = player.healthLevel + " / 20";
-            leveltxt[1].text = player.meleeLevel + " / 20";
-            leveltxt[2].text = player.rangeLevel + " / 20";
+            leveltxt[1].text = player.rangeLevel + " / 20";
+            leveltxt[2].text = player.meleeLevel + " / 20";
         }
         else if (isSkill == true)
         {
