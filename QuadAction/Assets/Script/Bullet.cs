@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Bullet : MonoBehaviour
 {
@@ -19,33 +18,9 @@ public class Bullet : MonoBehaviour
     public GameObject enemy;
     public string TagName;
     public float shortDis;
-    Vector3 SpotEnemy;
-    bool followEnemy = false;
-    Transform shortEnemy;
-    //Vector3 distanceEnemy;
-    //public float findEnemy = Vector3.
-
-    //public Transform target;
-    public NavMeshAgent navi;
-
-    void Awake()
-    {
-        //nav = GetComponent<NavMeshAgent>();
-        //navi = GetComponent<NavMeshAgent>();
-    }
-
-    void Update()
-    {
-        /*if (followEnemy == true)
-        {
-            navi.SetDestination(shortEnemy.position);
-            followEnemy = false;
-            Debug.Log("follow");
-
-        }*/
 
 
-    }
+
 
     void OnCollisionEnter(Collision collision)
     {
@@ -59,10 +34,10 @@ public class Bullet : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Enemy")
         {
-            /*FoundObjects = new List<GameObject>(GameObject.FindGameObjectsWithTag(TagName));
+            FoundObjects = new List<GameObject>(GameObject.FindGameObjectsWithTag(TagName));
             shortDis = Vector3.Distance(gameObject.transform.position, FoundObjects[0].transform.position); // 첫번째를 기준으로 잡아주기 
 
-            enemy = FoundObjects[1]; // 첫번째는 타격자 그 후 두번째 가까운 적에게 이동 
+            enemy = FoundObjects[0]; // 첫번째를 먼저 
 
             foreach (GameObject found in FoundObjects)
             {
@@ -72,37 +47,33 @@ public class Bullet : MonoBehaviour
                 {
                     enemy = found;
                     shortDis = Distance;
-
-                    //transform.position = enemy;
+                    
                 }
             }
-            followEnemy = true;
-            shortEnemy = enemy.gameObject.transform;
-            //float enemyfind = Vector3.Distance(first_bullet,enemy);
-            //SpotEnemy = enemy.gameObject.transform.position;   */     
+            Debug.Log(enemy.name);
         }
-        void OnTriggerEnter(Collider other)
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        //findEnemy = findObject.GetComponent<SphereCollider>();
+        // find enemy 콜라이더 체크
+        /*if(player.PlayerSkill[0] != 0 &&  manager.enemyCntA+manager.enemyCntB+manager.enemyCntC+manager.enemyCntD >=2)
         {
-            //findEnemy = findObject.GetComponent<SphereCollider>();
-            // find enemy 콜라이더 체크
-            /*if(player.PlayerSkill[0] != 0 &&  manager.enemyCntA+manager.enemyCntB+manager.enemyCntC+manager.enemyCntD >=2)
-            {
-                //int myindex =   
-            }
-            if (!isMelee && other.gameObject.tag == "Wall")
-            {
-                Destroy(gameObject);
-            }*/
-            //findObject = findEnemy.GetComponent<SphereCollider>();
-            /*if (player.playerSkill[0] == true && manager.enemyCntAll >= 2 && other.gameObject.tag == "Enemy")
-            {
-                Debug.Log("적 확인");
-            }*/
-            if (other.gameObject.tag == "Enemy")
-            {
-                //Vector3.Distance()
-                Destroy(gameObject);
-            }
+            //int myindex =   
+        }
+        if (!isMelee && other.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }*/
+        //findObject = findEnemy.GetComponent<SphereCollider>();
+        /*if (player.playerSkill[0] == true && manager.enemyCntAll >= 2 && other.gameObject.tag == "Enemy")
+        {
+            Debug.Log("적 확인");
+        }*/
+        if(other.gameObject.tag == "Enemy")
+        {
+            Debug.Log("3쿠션");
+            
         }
     }
 }

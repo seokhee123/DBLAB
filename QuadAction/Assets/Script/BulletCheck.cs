@@ -6,10 +6,6 @@ public class BulletCheck : MonoBehaviour
 {
     public bool bulletCheck = false;
     
-    
-
-
-
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Enemy")
