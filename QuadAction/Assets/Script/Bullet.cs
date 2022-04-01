@@ -31,18 +31,18 @@ public class Bullet : MonoBehaviour
     void Awake()
     {
         //nav = GetComponent<NavMeshAgent>();
-        navi = GetComponent<NavMeshAgent>();
+        //navi = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
-        if (followEnemy == true)
+        /*if (followEnemy == true)
         {
             navi.SetDestination(shortEnemy.position);
             followEnemy = false;
             Debug.Log("follow");
 
-        }
+        }*/
 
 
     }
@@ -59,7 +59,7 @@ public class Bullet : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Enemy")
         {
-            FoundObjects = new List<GameObject>(GameObject.FindGameObjectsWithTag(TagName));
+            /*FoundObjects = new List<GameObject>(GameObject.FindGameObjectsWithTag(TagName));
             shortDis = Vector3.Distance(gameObject.transform.position, FoundObjects[0].transform.position); // 첫번째를 기준으로 잡아주기 
 
             enemy = FoundObjects[1]; // 첫번째는 타격자 그 후 두번째 가까운 적에게 이동 
@@ -79,7 +79,7 @@ public class Bullet : MonoBehaviour
             followEnemy = true;
             shortEnemy = enemy.gameObject.transform;
             //float enemyfind = Vector3.Distance(first_bullet,enemy);
-            //SpotEnemy = enemy.gameObject.transform.position;        }
+            //SpotEnemy = enemy.gameObject.transform.position;   */     
         }
         void OnTriggerEnter(Collider other)
         {
@@ -101,7 +101,7 @@ public class Bullet : MonoBehaviour
             if (other.gameObject.tag == "Enemy")
             {
                 //Vector3.Distance()
-
+                Destroy(gameObject);
             }
         }
     }
