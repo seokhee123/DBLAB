@@ -193,15 +193,11 @@ public class enemy : MonoBehaviour
         }
         else if (curHealth <= 0)
         {
+            Player player = target.GetComponent<Player>();
             this.gameObject.layer = 14;
             if (enemytype == Type.D)
             {
                 manager.isBoss = false;
-            }
-            Player player = target.GetComponent<Player>();
-            if (player.equipWeapon.name.Equals("Weapon SubMachineGun") && player.skills[2]&& enemytype != Type.D)
-            {
-                dieG.SetActive(true);
             }
             foreach (MeshRenderer mesh in mat)
                 mesh.material.color= Color.gray;
@@ -228,16 +224,31 @@ public class enemy : MonoBehaviour
             switch (enemytype)
             {
                 case Type.A:
-                    manager.enemyCntA--;
+                    if (player.kill[0] < 10)
+                    {
+                        player.kill[0]++;
+                        if (player.kill[0] == 10) player.skillpt++;
+                    } 
                     break;
                 case Type.B:
-                    manager.enemyCntB--;
+                    if (player.kill[1] < 10)
+                    {
+                        player.kill[1]++;
+                        if (player.kill[1] == 10) player.skillpt++;
+                    }
                     break;
                 case Type.C:
-                    manager.enemyCntC--;
+                    if (player.kill[2] < 10)
+                    {
+                        player.kill[2]++;
+                        if (player.kill[2] == 10) player.skillpt++;
+                    }
                     break;
                 case Type.D:
-                    manager.enemyCntD--;
+                    {
+                        player.kill[3]++;
+                        if (player.kill[3] > 0 && (player.skills[0]&& player.skills[1] && player.skills[2])) player.skillpt++;
+                    }
                     break;
             }
             if (isGrenade)
