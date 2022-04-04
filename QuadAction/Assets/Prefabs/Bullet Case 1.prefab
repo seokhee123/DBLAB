@@ -43,9 +43,10 @@ GameObject:
   - component: {fileID: 3438235071871611510}
   - component: {fileID: 3767356097264783635}
   - component: {fileID: 4623024366704453422}
+  - component: {fileID: 2529060987892508857}
   m_Layer: 17
   m_Name: Bullet Case 1
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,6 +139,26 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2529060987892508857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391530085988653607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd89e69088cf3b42add5f9b74b6250b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 9999
+  isMelee: 0
+  isRock: 0
+  findEnemy: {fileID: 0}
+  FoundObjects: []
+  enemy: {fileID: 0}
+  TagName: 
+  shortDis: 0
 --- !u!1 &6225564268656765788
 GameObject:
   m_ObjectHideFlags: 0
