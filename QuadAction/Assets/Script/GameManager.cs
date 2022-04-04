@@ -273,13 +273,14 @@ public class GameManager : MonoBehaviour
     }
 
     public void CoolDown(int i) {
+        Debug.Log("SSSSSSSSS");
         isCool[i] = true;
         if (i==0) {
-            int time=10;
+            float time =10;
             while (time > 0) {
-                cooltxt[i].text = Convert.ToString(time);
-                time -= (int)Time.deltaTime;
-                Debug.Log(Time.deltaTime);
+                cooltxt[i].text = Convert.ToString((int)time);
+                time -= Time.deltaTime;
+                Debug.Log(time);
             }
             isCool[i] = false;
         }

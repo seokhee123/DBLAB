@@ -157,8 +157,9 @@ public class Player : MonoBehaviour
         {
             StartCoroutine("Fire");
             manager.CoolDown(0);
+
         }
-        StopCoroutine("Fire");
+        //StopCoroutine("Fire");
     }
 
     IEnumerator Fire()
