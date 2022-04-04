@@ -142,6 +142,7 @@ public class Player : MonoBehaviour
         if (qDown)
         {
             StartCoroutine("Fire");
+            
         }
         StopCoroutine("Fire");
     }
@@ -151,6 +152,7 @@ public class Player : MonoBehaviour
         GameObject intantQskill = Instantiate(qskill, qskillPos.position, qskillPos.rotation);
         Rigidbody qskill1Rigid = intantQskill.GetComponent<Rigidbody>();
         qskill1Rigid.velocity = qskillPos.forward * 50;
+        
         yield return null;
     }
     void Move()

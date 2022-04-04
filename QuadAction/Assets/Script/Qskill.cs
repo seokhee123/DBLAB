@@ -61,15 +61,19 @@ public class Qskill : MonoBehaviour
     public GameObject boom;
     public GameObject boom1;
     public GameObject boom2;
+    public GameObject boom3;
     public Transform boomPos1;
     public Transform boomPos2;
     public Transform boomPos3;
+
+    //Player player;
     void OnTriggerExit(Collider other)
     {
         if(other.tag == "Enemy")
         {
             
             StartCoroutine("Boom");
+            //Destroy(player.qskill,3f);
         }
         //StopCoroutine("Fire");
 
@@ -84,18 +88,23 @@ public class Qskill : MonoBehaviour
         BoomRigid.velocity = boomPos1.forward * - 50;*/
         //BoomRigid.transform
         //Destroy(boom, 3f);
-
+        
         //boomPos.position = new Vector3(0, 0, 2);
         GameObject intantBoom1 = Instantiate(boom1, boomPos2.position, boomPos2.rotation);
         Rigidbody Boom1Rigid = intantBoom1.GetComponent<Rigidbody>();
         Boom1Rigid.velocity = boomPos2.right * 50;
-        Destroy(boom1, 3f);
+        Destroy(intantBoom1, 5f);
+
+        /*GameObject intantBoom3 = Instantiate(boom3, boomPos3.position, boomPos2.rotation);
+        Rigidbody Boom3Rigid = intantBoom1.GetComponent<Rigidbody>();
+        Boom1Rigid.velocity = boomPos3.right * 50 + boomPos3.forward * 50;
+        Destroy(boom1, 3f);*/
 
         //boomPos.position = new Vector3(0, 0, -2);
         GameObject intantBoom2 = Instantiate(boom2, boomPos3.position, boomPos3.rotation);
         Rigidbody Boom2Rigid = intantBoom2.GetComponent<Rigidbody>();
         Boom2Rigid.velocity = boomPos3.right * -50;
-        Destroy(boom2, 3f);
+        Destroy(intantBoom2, 5f);
 
         yield return null;
     }
