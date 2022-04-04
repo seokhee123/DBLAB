@@ -20322,6 +20322,9 @@ MonoBehaviour:
   toggle: 0
   equipWeapon: {fileID: 0}
   equipWeaponIndex: -1
+  playerSkill: 
+  qskillPos: {fileID: 4015532961624162461, guid: fc05e9c51f02e314488b8326ce8c0259, type: 3}
+  qskill: {fileID: 1328281879}
 --- !u!136 &725977969
 CapsuleCollider:
   m_ObjectHideFlags: 0
