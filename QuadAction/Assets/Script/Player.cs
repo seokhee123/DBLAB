@@ -153,10 +153,10 @@ public class Player : MonoBehaviour
     
     void Skills()
     {
-        if (qDown)
+        if (skills[0] && manager.isCool[0] == false && qDown)
         {
             StartCoroutine("Fire");
-            
+            manager.CoolDown(0);
         }
         StopCoroutine("Fire");
     }
@@ -166,7 +166,6 @@ public class Player : MonoBehaviour
         GameObject intantQskill = Instantiate(qskill, qskillPos.position, qskillPos.rotation);
         Rigidbody qskill1Rigid = intantQskill.GetComponent<Rigidbody>();
         qskill1Rigid.velocity = qskillPos.forward * 50;
-        
         yield return null;
     }
     void Move()
@@ -272,8 +271,8 @@ public class Player : MonoBehaviour
     {
         if (jDown && moveVec != Vector3.zero &&!isJump && !isDodge && !isSwap && !isShop || isDead)
         {
-            
-            if (skills[0] == true && equipWeaponIndex == 0)
+
+            if (skills[2] == true)
             {
                 foreach (MeshRenderer mesh in meshs)
                 {
@@ -281,7 +280,7 @@ public class Player : MonoBehaviour
                 }
                 isDamage = true;
             }
-            
+
             dodgeVec = moveVec;
             speed *= 2; 
             anim.SetTrigger("doDodge");
@@ -294,7 +293,7 @@ public class Player : MonoBehaviour
     {
         speed *= 0.5f;
         isDodge = false;
-        if (skills[0] == true && equipWeaponIndex == 0)
+        if (skills[2] == true)
         {
             foreach (MeshRenderer mesh in meshs)
             {
@@ -328,17 +327,6 @@ public class Player : MonoBehaviour
             equipWeapon = weapons[weaponIndex].GetComponent<Weapon>();
             equipWeapon.gameObject.SetActive(true);
             anim.SetTrigger("doSwap");
-            for(int i = 0; i < weapons.Length; i++)
-            {
-                if (i == equipWeaponIndex)
-                {
-                    manager.sikillImg[i].color = Color.cyan;
-                }
-                else
-                {
-                    manager.sikillImg[i].color = Color.white;
-                }
-            }
             isSwap = true;
             Invoke("SwapOut", 0.4f);
         }

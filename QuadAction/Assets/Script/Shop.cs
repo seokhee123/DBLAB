@@ -44,16 +44,16 @@ public class Shop : MonoBehaviour
             if (!player.skills[0])
                 leveltxt[0].text = player.kill[0] + " / 10";
             else
-                leveltxt[0].text = "È¹µæ ¿Ï·á!";
+                leveltxt[0].text = "íšë“ ì™„ë£Œ!";
 
             if (!player.skills[1])
                 leveltxt[1].text = player.kill[1] + " / 10";
             else
-                leveltxt[1].text = "È¹µæ ¿Ï·á!";
+                leveltxt[1].text = "íšë“ ì™„ë£Œ!";
             if (!player.skills[2])
                 leveltxt[2].text = player.kill[2] + " / 10";
             else
-                leveltxt[2].text = "È¹µæ ¿Ï·á!";
+                leveltxt[2].text = "íšë“ ì™„ë£Œ!";
             if (player.kill[0] == 10 && !player.skills[0]) btn[0].interactable = true;
             if (player.kill[1] == 10 && !player.skills[1]) btn[1].interactable = true;
             if (player.kill[2] == 10 && !player.skills[2]) btn[2].interactable = true;
@@ -78,8 +78,9 @@ public class Shop : MonoBehaviour
             player.skills[0] = true;
             player.skillpt--;
             UIGroup.gameObject.SetActive(false);
-            player.isSkill = false;
             btn[0].interactable = false;
+            if(player.skillpt == 0) player.isSkill = false;
+
         }
         else if (n == 1)
         {
@@ -87,8 +88,8 @@ public class Shop : MonoBehaviour
             player.skills[1] = true;
             player.skillpt--;
             UIGroup.gameObject.SetActive(false);
-            player.isSkill = false;
             btn[1].interactable = false;
+            if(player.skillpt == 0) player.isSkill = false;
         }
         else if (n == 2) 
         {
@@ -96,8 +97,8 @@ public class Shop : MonoBehaviour
             player.skills[2] = true;
             player.skillpt--;
             UIGroup.gameObject.SetActive(false);
-            player.isSkill = false;
             btn[2].interactable = false;
+            if(player.skillpt == 0) player.isSkill = false;
         }
         else if (n==3)
         {
@@ -113,7 +114,6 @@ public class Shop : MonoBehaviour
             if (player.healthLevel == 20) btn[0].interactable = false;
             UIGroup.gameObject.SetActive(false);
             player.isLevel = false;
-            
         }
         else if (n == 1)
         {

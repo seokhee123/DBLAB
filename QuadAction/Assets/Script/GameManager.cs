@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public int enemyCntC;
     public int enemyCntD;
     public int enemyCntAll;
-    
+    public Text[] cooltxt;
 
     public Transform[] enemyZones;
     public GameObject[] enemies;
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
     public bool isBoss;
     public int bosscnt;
     public int scorecnt;
-    
+    public bool[] isCool;
 
     Dictionary<string, int> scoredata = new Dictionary<string, int>();
 
@@ -71,10 +71,6 @@ public class GameManager : MonoBehaviour
         enemyList = new List<int>();
     }
 
-    public void Upate()
-    {
-
-    }
     public void GameStart()
     {
         Bullet bullet = range.GetComponent<Bullet>();
@@ -188,7 +184,6 @@ public class GameManager : MonoBehaviour
             {
                 int ran = UnityEngine.Random.Range(0, 3);
                 enemyList.Add(ran);
-
                 switch (ran)
                 {
                     case 0:
@@ -276,6 +271,29 @@ public class GameManager : MonoBehaviour
 
         enemyCntAll = enemyCntA + enemyCntA + enemyCntA + enemyCntA;
     }
+
+    public void CoolDown(int i) {
+        isCool[i] = true;
+        if (i==0) {
+            int time=10;
+            while (time > 0) {
+                cooltxt[i].text = Convert.ToString(time);
+                time -= (int)Time.deltaTime;
+                Debug.Log(Time.deltaTime);
+            }
+            isCool[i] = false;
+        }
+        else if (i==1) {
+            
+        }
+        else if (i==2) {
+            
+        }
+        else if (i==3) {
+
+        }
+    }
+
     private void LateUpdate()
     {
         if (player.isLevel == true||player.isSkill == true) Time.timeScale = 0;
@@ -290,7 +308,7 @@ public class GameManager : MonoBehaviour
         playTimeTxt.text = string.Format("{0:00}", hour) + ":" + string.Format("{0:00}", min) + ":" + string.Format("{0:00}", sec);
 
         playerHealthTxt.text = player.health + " / " + player.maxHealth;
-        playerCoinTxt.text = player.exp + " / " + player.maxExp;
+        playerCoinTxt.text = (int)player.exp + " / " + (int)player.maxExp;
         //string.Format("{0:n0}", player.coin);
         if (player.equipWeapon == null)
         {
@@ -298,7 +316,7 @@ public class GameManager : MonoBehaviour
         }
         else if (player.equipWeapon.type == Weapon.Type.Melee)
         {
-            playerAmmoTxt.text = "- / ¡Ä";
+            playerAmmoTxt.text = "- / âˆž";
         }
         else
         {
@@ -316,6 +334,7 @@ public class GameManager : MonoBehaviour
         if (player.skills[0]) sikillImg[0].gameObject.SetActive(true);
         if (player.skills[1]) sikillImg[1].gameObject.SetActive(true);
         if (player.skills[2]) sikillImg[2].gameObject.SetActive(true);
+        if (player.skills[3]) sikillImg[3].gameObject.SetActive(true);
 
         if (boss != null)
         {
@@ -327,6 +346,5 @@ public class GameManager : MonoBehaviour
         {
             bossHealthgroup.anchoredPosition = Vector3.down * 2000;
         }
-       
     }
 }
