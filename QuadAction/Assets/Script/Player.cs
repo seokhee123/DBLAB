@@ -158,7 +158,7 @@ public class Player : MonoBehaviour
             manager.isCool[0] = true;
             StartCoroutine("Fire");
         }
-        StopCoroutine("Fire");
+        //StopCoroutine("Fire");
     }
 
     IEnumerator Fire()
