@@ -61,11 +61,11 @@ public class GameManager : MonoBehaviour
     public int bosscnt;
     public int scorecnt;
     public bool[] isCool;
-
+    public float[] CoolTime;
+    public Image img;
     Dictionary<string, int> scoredata = new Dictionary<string, int>();
 
     public void Awake()
-
     {
         player.ReadFile("score.txt", scoredata);
         enemyList = new List<int>();
@@ -263,6 +263,7 @@ public class GameManager : MonoBehaviour
         StageEnd();
         */
     }
+
     void Update()
     {
         if (isBattle)
@@ -271,31 +272,36 @@ public class GameManager : MonoBehaviour
 
         enemyCntAll = enemyCntA + enemyCntA + enemyCntA + enemyCntA;
     }
-
-    public void CoolDown(int i) {
-        isCool[i] = true;
-        if (i==0) {
-            int time=10;
-            while (time > 0) {
-                cooltxt[i].text = Convert.ToString(time);
-                time -= (int)Time.deltaTime;
-                Debug.Log(Time.deltaTime);
+    
+    public void CoolDown() {
+        if (isCool[0] == true) {
+            if (CoolTime[0] <= 0)
+            {
+                cooltxt[0].text = "Q";
+                CoolTime[0] = 5;
+                isCool[0] = false;
             }
-            isCool[i] = false;
+            else
+            {
+                isCool[0] = true;
+                //img.
+                CoolTime[0] -= Time.deltaTime;
+            }
         }
-        else if (i==1) {
+        else if (true) {
             
         }
-        else if (i==2) {
+        else if (true) {
             
         }
-        else if (i==3) {
+        else if (true) {
 
         }
     }
 
     private void LateUpdate()
     {
+        CoolDown();
         if (player.isLevel == true||player.isSkill == true) Time.timeScale = 0;
         else if (player.isLevel == false && player.isSkill == false) Time.timeScale = 1;
         scoreTxt.text = string.Format("{0:n0}", player.score);

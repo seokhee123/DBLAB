@@ -17510,7 +17510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &508305383
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22040,6 +22040,12 @@ MonoBehaviour:
   bosscnt: 0
   scorecnt: 0
   isCool: 00000000
+  CoolTime:
+  - 5
+  - 5
+  - 5
+  - 5
+  img: {fileID: 508305384}
 --- !u!4 &811149569
 Transform:
   m_ObjectHideFlags: 0

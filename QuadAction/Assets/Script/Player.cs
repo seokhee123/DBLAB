@@ -155,8 +155,8 @@ public class Player : MonoBehaviour
     {
         if (skills[0] && manager.isCool[0] == false && qDown)
         {
+            manager.isCool[0] = true;
             StartCoroutine("Fire");
-            manager.CoolDown(0);
         }
         StopCoroutine("Fire");
     }
