@@ -94,11 +94,15 @@ public class Shop : MonoBehaviour
         else if (n == 2) 
         {
             btn[2].interactable = false;
-            player.skills[2] = true;
+            player.skills[3] = true;
             player.skillpt--;
             UIGroup.gameObject.SetActive(false);
             btn[2].interactable = false;
             if(player.skillpt == 0) player.isSkill = false;
+            player.grenades[0].SetActive(true);
+            player.grenades[1].SetActive(true);
+            player.grenades[2].SetActive(true);
+            player.grenades[3].SetActive(true);
         }
         else if (n==3)
         {

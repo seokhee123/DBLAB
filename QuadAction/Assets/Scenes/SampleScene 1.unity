@@ -17510,7 +17510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &508305383
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20608,7 +20608,7 @@ MonoBehaviour:
   - {fileID: 145498031}
   - {fileID: 262039837}
   - {fileID: 662043688}
-  hasGrenades: 0
+  hasGrenades: 4
   grenadeObj: {fileID: 2712080293781481637, guid: 6d741b9eafe50484ca211d2750450704, type: 3}
   followCamera: {fileID: 963194227}
   manager: {fileID: 811149568}
@@ -22045,7 +22045,6 @@ MonoBehaviour:
   - 5
   - 5
   - 5
-  img: {fileID: 508305384}
 --- !u!4 &811149569
 Transform:
   m_ObjectHideFlags: 0

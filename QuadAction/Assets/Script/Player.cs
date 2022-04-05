@@ -153,12 +153,12 @@ public class Player : MonoBehaviour
     
     void Skills()
     {
-        if (skills[0] && manager.isCool[0] == false && qDown)
+        if (skills[0] && !manager.isCool[0] && qDown)
         {
-            manager.isCool[0] = true;
             StartCoroutine("Fire");
+            manager.sikillImg[0].color = Color.gray;
+            manager.isCool[0] = true;
         }
-        //StopCoroutine("Fire");
     }
 
     IEnumerator Fire()
@@ -211,12 +211,12 @@ public class Player : MonoBehaviour
     }
     void Grenade()
     {
-        if (hasGrenades == 0)
+        if (!skills[3] || manager.isCool[3])
         {
             return;
         }
 
-        if (gDown && !isReload && !isSwap || isDead)
+        if (gDown && !isReload && !isSwap && !(hasGrenades == 0)|| isDead)
         {
             Ray ray = followCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit rayHit;
@@ -231,6 +231,11 @@ public class Player : MonoBehaviour
                 rigidGrenade.AddTorque(Vector3.back * 10, ForceMode.Impulse);
                 hasGrenades--;
                 grenades[hasGrenades].SetActive(false);
+                if (hasGrenades == 0)
+                {
+                    manager.isCool[3] = true;
+                    manager.sikillImg[3].color = Color.gray;
+                }
             }
         }
     }
@@ -271,12 +276,14 @@ public class Player : MonoBehaviour
     {
         if (jDown && moveVec != Vector3.zero &&!isJump && !isDodge && !isSwap && !isShop || isDead)
         {
-
-            if (skills[2] == true)
+            
+            if (skills[2] && !manager.isCool[2])
             {
                 foreach (MeshRenderer mesh in meshs)
                 {
                     mesh.material.color = Color.blue;
+                    manager.sikillImg[2].color = Color.gray;
+                    manager.isCool[2] = true;
                 }
                 isDamage = true;
             }
@@ -293,7 +300,7 @@ public class Player : MonoBehaviour
     {
         speed *= 0.5f;
         isDodge = false;
-        if (skills[2] == true)
+        if (manager.isCool[2])
         {
             foreach (MeshRenderer mesh in meshs)
             {

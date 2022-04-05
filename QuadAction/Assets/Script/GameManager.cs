@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour
     public int scorecnt;
     public bool[] isCool;
     public float[] CoolTime;
-    public Image img;
     Dictionary<string, int> scoredata = new Dictionary<string, int>();
 
     public void Awake()
@@ -210,58 +209,6 @@ public class GameManager : MonoBehaviour
             }
             yield return new WaitForSeconds(30f);
         }
-        /*
-        if (stage % 5 == 0)
-        {
-            enemyCntD++;
-            GameObject instantEnemy = Instantiate(enemies[3], enemyZones[0].position, enemyZones[0].rotation);
-            enemy enemy = instantEnemy.GetComponent<enemy>();
-            enemy.target = player.transform;
-            enemy.manager = this;
-            enemy.tag = "Enemy";
-            boss = instantEnemy.GetComponent<Boss>();
-        }
-        else
-        {
-            for (int index = 0; index < stage; index++)
-            {
-                int ran = Random.Range(0, 3);
-                enemyList.Add(ran);
-
-                switch (ran)
-                {
-                    case 0:
-                        enemyCntA++;
-                        break;
-                    case 1:
-                        enemyCntB++;
-                        break;
-                    case 2:
-                        enemyCntC++;
-                        break;
-                }
-            }
-            while (enemyList.Count > 0)
-            {
-                int ranZone = Random.Range(0, 4);
-                GameObject instantEnemy = Instantiate(enemies[enemyList[0]], enemyZones[ranZone].position, enemyZones[ranZone].rotation);
-                enemy enemy = instantEnemy.GetComponent<enemy>();
-                enemy.target = player.transform;
-                enemy.manager = this;
-                enemy.tag = "enemy";
-                enemyList.RemoveAt(0);
-                yield return new WaitForSeconds(4f);
-            }
-        }
-        
-        while (enemyCntA + enemyCntB + enemyCntC + enemyCntD >0)
-        {
-            yield return null;
-        }
-        yield return new WaitForSeconds(5f);
-        boss = null;
-        StageEnd();
-        */
     }
 
     void Update()
@@ -274,28 +221,66 @@ public class GameManager : MonoBehaviour
     }
     
     public void CoolDown() {
-        if (isCool[0] == true) {
+        if (isCool[0]) {
             if (CoolTime[0] <= 0)
             {
                 cooltxt[0].text = "Q";
+                sikillImg[0].color = Color.white;
                 CoolTime[0] = 5;
                 isCool[0] = false;
             }
             else
             {
-                isCool[0] = true;
-                //img.
+                cooltxt[0].text = Convert.ToString((int)CoolTime[0]);
                 CoolTime[0] -= Time.deltaTime;
             }
         }
-        else if (true) {
-            
+        if (isCool[1] == true) {
+            if (CoolTime[1] <= 0)
+            {
+                cooltxt[1].text = "Q";
+                sikillImg[1].color = Color.white;
+                CoolTime[1] = 5;
+                isCool[1] = false;
+            }
+            else
+            {
+                cooltxt[1].text = Convert.ToString((int)CoolTime[1]);
+                CoolTime[1] -= Time.deltaTime;
+            }
         }
-        else if (true) {
-            
+        if (isCool[2] == true) {
+            if (CoolTime[2] <= 0)
+            {
+                cooltxt[2].text = "SpaceBar";
+                sikillImg[2].color = Color.white;
+                CoolTime[2] = 5;
+                isCool[2] = false;
+            }
+            else
+            {
+                cooltxt[2].text = Convert.ToString((int)CoolTime[2]);
+                CoolTime[2] -= Time.deltaTime;
+            }
         }
-        else if (true) {
-
+        if (isCool[3] == true) {
+            if (CoolTime[3] <= 0)
+            {
+                cooltxt[3].text = "Mouse R";
+                sikillImg[3].color = Color.white;
+                CoolTime[3] = 5;
+                isCool[3] = false;
+                player.hasGrenades = 4;
+                player.grenades[0].SetActive(true);
+                player.grenades[1].SetActive(true);
+                player.grenades[2].SetActive(true);
+                player.grenades[3].SetActive(true);
+            }
+            else
+            {
+                cooltxt[3].text = Convert.ToString((int)CoolTime[3]);
+                CoolTime[3] -= Time.deltaTime;
+            }
         }
     }
 
