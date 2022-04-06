@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public int enemyCntD;
     public int enemyCntAll;
     public Text[] cooltxt;
+    public Text[] skillcooltxt;
 
     public Transform[] enemyZones;
     public GameObject[] enemies;
@@ -224,14 +225,15 @@ public class GameManager : MonoBehaviour
         if (isCool[0]) {
             if (CoolTime[0] <= 0)
             {
-                cooltxt[0].text = "Q";
+                cooltxt[0].gameObject.SetActive(true);
+                skillcooltxt[0].gameObject.SetActive(false);
                 sikillImg[0].color = Color.white;
                 CoolTime[0] = 5;
                 isCool[0] = false;
             }
             else
             {
-                cooltxt[0].text = Convert.ToString((int)CoolTime[0]);
+                skillcooltxt[0].text = Convert.ToString((int)CoolTime[0]);
                 CoolTime[0] -= Time.deltaTime;
             }
         }
@@ -252,14 +254,15 @@ public class GameManager : MonoBehaviour
         if (isCool[2] == true) {
             if (CoolTime[2] <= 0)
             {
-                cooltxt[2].text = "SpaceBar";
+                cooltxt[2].gameObject.SetActive(true);
+                skillcooltxt[2].gameObject.SetActive(false);
                 sikillImg[2].color = Color.white;
                 CoolTime[2] = 5;
                 isCool[2] = false;
             }
             else
             {
-                cooltxt[2].text = Convert.ToString((int)CoolTime[2]);
+                skillcooltxt[2].text = Convert.ToString((int)CoolTime[2]);
                 CoolTime[2] -= Time.deltaTime;
             }
         }

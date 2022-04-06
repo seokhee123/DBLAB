@@ -76,9 +76,6 @@ public class Player : MonoBehaviour
     float fireDelay;
     Dictionary<string, int> scoredata = new Dictionary<string, int>();
 
-    public bool[] playerSkill;
-    //private static Player instance;
-
     public Transform qskillPos;
     public GameObject qskill;
 
@@ -88,7 +85,6 @@ public class Player : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
         meshs = GetComponentsInChildren<MeshRenderer>();
-        
         PlayerPrefs.SetInt("MaxScore", 0);
     }
 
@@ -158,6 +154,8 @@ public class Player : MonoBehaviour
             StartCoroutine("Fire");
             manager.sikillImg[0].color = Color.gray;
             manager.isCool[0] = true;
+            manager.skillcooltxt[0].gameObject.SetActive(true);
+            manager.cooltxt[0].gameObject.SetActive(false);
         }
     }
 
@@ -286,6 +284,8 @@ public class Player : MonoBehaviour
                     manager.isCool[2] = true;
                 }
                 isDamage = true;
+                manager.skillcooltxt[2].gameObject.SetActive(true);
+                manager.cooltxt[2].gameObject.SetActive(false);
             }
 
             dodgeVec = moveVec;
