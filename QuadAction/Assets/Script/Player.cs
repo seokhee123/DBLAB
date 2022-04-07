@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
     bool sDown2;
     bool sDown3;
     bool qDown;
+    bool eDown;
 
     bool isJump;
     bool isDodge;
@@ -62,6 +63,8 @@ public class Player : MonoBehaviour
     public bool isDead;
     public bool[] skills;
     public bool toggle;
+    public GameObject EskillGroup;
+    public Eskill esk;
 
     Vector3 moveVec;
     Vector3 dodgeVec;
@@ -102,6 +105,7 @@ public class Player : MonoBehaviour
             Dodge();
             Swap();
             Skills();
+            Eskill();
             Interation();
         }
 
@@ -143,8 +147,8 @@ public class Player : MonoBehaviour
         iDown = Input.GetButtonDown("Interation");
         sDown1 = Input.GetButtonDown("Swap1");
         sDown2 = Input.GetButtonDown("Swap2");
-        //sDown3 = Input.GetButtonDown("Swap3");
         qDown = Input.GetButtonDown("Qskill");
+        eDown = Input.GetButtonDown("Eskill");
     }
     
     void Skills()
@@ -177,6 +181,19 @@ public class Player : MonoBehaviour
 
         anim.SetBool("isRun", moveVec != Vector3.zero);
         anim.SetBool("isWalk", wDown);
+    }
+
+    void Eskill()
+    {
+        //float time += Time.timeScale;
+        if (skills[1] && !manager.isCool[1] && eDown)
+        {
+            esk.isShoot = true;
+            EskillGroup.SetActive(true);
+            manager.sikillImg[1].color = Color.gray;
+            manager.isCool[1] = true;
+            
+        }
     }
     void Turn()
     {

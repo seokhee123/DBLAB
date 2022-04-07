@@ -239,15 +239,24 @@ public class GameManager : MonoBehaviour
             }
         }
         if (isCool[1] == true) {
+            bool dob = true;
             if (CoolTime[1] <= 0)
             {
+                skillcooltxt[1].gameObject.SetActive(false);
                 sikillImg[1].color = Color.white;
-                CoolTime[1] = 5;
+                CoolTime[1] = 30;
                 isCool[1] = false;
             }
             else
             {
                 CoolTime[1] -= Time.deltaTime;
+                if (dob && CoolTime[1] <= 25)
+                {
+                    dob = false;
+                    skillcooltxt[1].gameObject.SetActive(true);
+                    player.EskillGroup.SetActive(false);
+                }
+                skillcooltxt[1].text = Convert.ToString((int)CoolTime[1]);
             }
         }
         if (isCool[2] == true) {
