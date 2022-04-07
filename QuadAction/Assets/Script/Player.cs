@@ -143,7 +143,7 @@ public class Player : MonoBehaviour
         iDown = Input.GetButtonDown("Interation");
         sDown1 = Input.GetButtonDown("Swap1");
         sDown2 = Input.GetButtonDown("Swap2");
-        sDown3 = Input.GetButtonDown("Swap3");
+        //sDown3 = Input.GetButtonDown("Swap3");
         qDown = Input.GetButtonDown("Qskill");
     }
     
@@ -155,7 +155,6 @@ public class Player : MonoBehaviour
             manager.sikillImg[0].color = Color.gray;
             manager.isCool[0] = true;
             manager.skillcooltxt[0].gameObject.SetActive(true);
-            manager.cooltxt[0].gameObject.SetActive(false);
         }
     }
 
@@ -233,6 +232,7 @@ public class Player : MonoBehaviour
                 {
                     manager.isCool[3] = true;
                     manager.sikillImg[3].color = Color.gray;
+                    manager.skillcooltxt[3].gameObject.SetActive(true);
                 }
             }
         }
@@ -285,7 +285,6 @@ public class Player : MonoBehaviour
                 }
                 isDamage = true;
                 manager.skillcooltxt[2].gameObject.SetActive(true);
-                manager.cooltxt[2].gameObject.SetActive(false);
             }
 
             dodgeVec = moveVec;
@@ -321,9 +320,31 @@ public class Player : MonoBehaviour
             return;
 
         int weaponIndex = -1;
-        if (sDown1) weaponIndex = 0;
-        if (sDown2) weaponIndex = 1;        
-        if (sDown3) weaponIndex = 2;
+        if (sDown1 && !isJump && !isDodge)
+        {
+            weaponIndex = 0;
+            manager.equip[0].transform.GetChild(0).gameObject.SetActive(true);
+            manager.equip[0].transform.GetChild(1).gameObject.SetActive(false);
+            manager.equip[0].transform.GetChild(2).gameObject.SetActive(true);
+            manager.equip[0].transform.GetChild(3).gameObject.SetActive(false);
+            manager.equip[1].transform.GetChild(0).gameObject.SetActive(false);
+            manager.equip[1].transform.GetChild(1).gameObject.SetActive(true);
+            manager.equip[1].transform.GetChild(2).gameObject.SetActive(false);
+            manager.equip[1].transform.GetChild(3).gameObject.SetActive(true);
+
+        }
+        if (sDown2 && !isJump && !isDodge)
+        {
+            weaponIndex = 1;
+            manager.equip[0].transform.GetChild(0).gameObject.SetActive(false);
+            manager.equip[0].transform.GetChild(1).gameObject.SetActive(true);
+            manager.equip[0].transform.GetChild(2).gameObject.SetActive(false);
+            manager.equip[0].transform.GetChild(3).gameObject.SetActive(true);
+            manager.equip[1].transform.GetChild(0).gameObject.SetActive(true);
+            manager.equip[1].transform.GetChild(1).gameObject.SetActive(false);
+            manager.equip[1].transform.GetChild(2).gameObject.SetActive(true);
+            manager.equip[1].transform.GetChild(3).gameObject.SetActive(false);
+        }
 
         if((sDown1 || sDown2 || sDown3) && !isJump && !isDodge && !isShop)
         {

@@ -22,6 +22,7 @@ public class Shop : MonoBehaviour
     public bool isSkill;
     Player enterPlayer;
 
+    int hidden = 3;
     public void Awake()
     {
         if (isSkill)
@@ -54,6 +55,11 @@ public class Shop : MonoBehaviour
                 leveltxt[2].text = player.kill[2] + " / 10";
             else
                 leveltxt[2].text = "획득 완료!";
+            if (!player.skills[3])
+                leveltxt[3].text = player.kill[3] + " / 1";
+            else
+                leveltxt[3].text = "획득 완료!";
+
             if (player.kill[0] == 10 && !player.skills[0]) btn[0].interactable = true;
             if (player.kill[1] == 10 && !player.skills[1]) btn[1].interactable = true;
             if (player.kill[2] == 10 && !player.skills[2]) btn[2].interactable = true;
@@ -79,33 +85,79 @@ public class Shop : MonoBehaviour
             player.skillpt--;
             UIGroup.gameObject.SetActive(false);
             btn[0].interactable = false;
-            if(player.skillpt == 0) player.isSkill = false;
+
+            manager.sikillImg[0].transform.GetChild(0).gameObject.SetActive(true);
+            manager.sikillImg[0].transform.GetChild(1).gameObject.SetActive(false);
+            manager.sikillImg[0].transform.GetChild(2).gameObject.SetActive(true);
+            hidden--;
+            if (hidden == 0)
+            {
+                btn[0].gameObject.SetActive(false);
+                btn[1].gameObject.SetActive(false);
+                btn[2].gameObject.SetActive(false);
+                btn[3].gameObject.SetActive(true);
+            }
+            if (player.skillpt == 0) player.isSkill = false;
 
         }
         else if (n == 1)
         {
-            btn[1].interactable = false;
             player.skills[1] = true;
             player.skillpt--;
             UIGroup.gameObject.SetActive(false);
             btn[1].interactable = false;
-            if(player.skillpt == 0) player.isSkill = false;
+
+            manager.sikillImg[1].transform.GetChild(0).gameObject.SetActive(true);
+            manager.sikillImg[1].transform.GetChild(1).gameObject.SetActive(false);
+            manager.sikillImg[1].transform.GetChild(2).gameObject.SetActive(true);
+            hidden--;
+            if (hidden == 0)
+            {
+                btn[0].gameObject.SetActive(false);
+                btn[1].gameObject.SetActive(false);
+                btn[2].gameObject.SetActive(false);
+                btn[3].gameObject.SetActive(true);
+            }
+            if (player.skillpt == 0) player.isSkill = false;
         }
-        else if (n == 2) 
+        else if (n == 2)
         {
-            btn[2].interactable = false;
-            player.skills[3] = true;
+            player.skills[2] = true;
             player.skillpt--;
             UIGroup.gameObject.SetActive(false);
             btn[2].interactable = false;
-            if(player.skillpt == 0) player.isSkill = false;
+
+            manager.sikillImg[2].transform.GetChild(0).gameObject.SetActive(true);
+            manager.sikillImg[2].transform.GetChild(1).gameObject.SetActive(false);
+            manager.sikillImg[2].transform.GetChild(2).gameObject.SetActive(true);
+            hidden--;
+            if(hidden == 0)
+            {
+                btn[0].gameObject.SetActive(false);
+                btn[1].gameObject.SetActive(false);
+                btn[2].gameObject.SetActive(false);
+                btn[3].gameObject.SetActive(true);
+            }
+            if (player.skillpt == 0) player.isSkill = false;
+            
+        }
+        else if (n == 3)
+        {
+            player.skills[3] = true;
+            player.skillpt--;
+            UIGroup.gameObject.SetActive(false);
+            btn[3].interactable = false;
+
+            manager.sikillImg[3].transform.GetChild(0).gameObject.SetActive(true);
+            manager.sikillImg[3].transform.GetChild(1).gameObject.SetActive(false);
+            manager.sikillImg[3].transform.GetChild(2).gameObject.SetActive(true);
+            
             player.grenades[0].SetActive(true);
             player.grenades[1].SetActive(true);
             player.grenades[2].SetActive(true);
             player.grenades[3].SetActive(true);
-        }
-        else if (n==3)
-        {
+
+            if (player.skillpt == 0) player.isSkill = false;
 
         }
     }

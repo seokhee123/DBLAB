@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public int enemyCntC;
     public int enemyCntD;
     public int enemyCntAll;
-    public Text[] cooltxt;
+    public Image[] cooltxt;
     public Text[] skillcooltxt;
 
     public Transform[] enemyZones;
@@ -63,6 +63,8 @@ public class GameManager : MonoBehaviour
     public int scorecnt;
     public bool[] isCool;
     public float[] CoolTime;
+    public GameObject[] equip;
+
     Dictionary<string, int> scoredata = new Dictionary<string, int>();
 
     public void Awake()
@@ -225,7 +227,6 @@ public class GameManager : MonoBehaviour
         if (isCool[0]) {
             if (CoolTime[0] <= 0)
             {
-                cooltxt[0].gameObject.SetActive(true);
                 skillcooltxt[0].gameObject.SetActive(false);
                 sikillImg[0].color = Color.white;
                 CoolTime[0] = 5;
@@ -240,21 +241,18 @@ public class GameManager : MonoBehaviour
         if (isCool[1] == true) {
             if (CoolTime[1] <= 0)
             {
-                cooltxt[1].text = "Q";
                 sikillImg[1].color = Color.white;
                 CoolTime[1] = 5;
                 isCool[1] = false;
             }
             else
             {
-                cooltxt[1].text = Convert.ToString((int)CoolTime[1]);
                 CoolTime[1] -= Time.deltaTime;
             }
         }
         if (isCool[2] == true) {
             if (CoolTime[2] <= 0)
             {
-                cooltxt[2].gameObject.SetActive(true);
                 skillcooltxt[2].gameObject.SetActive(false);
                 sikillImg[2].color = Color.white;
                 CoolTime[2] = 5;
@@ -269,7 +267,7 @@ public class GameManager : MonoBehaviour
         if (isCool[3] == true) {
             if (CoolTime[3] <= 0)
             {
-                cooltxt[3].text = "Mouse R";
+                skillcooltxt[3].gameObject.SetActive(false);
                 sikillImg[3].color = Color.white;
                 CoolTime[3] = 5;
                 isCool[3] = false;
@@ -281,7 +279,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                cooltxt[3].text = Convert.ToString((int)CoolTime[3]);
+                skillcooltxt[3].text = Convert.ToString((int)CoolTime[3]);
                 CoolTime[3] -= Time.deltaTime;
             }
         }
@@ -325,10 +323,10 @@ public class GameManager : MonoBehaviour
         enemyBTxt.text = enemyCntB.ToString();
         enemyCTxt.text = enemyCntC.ToString();
 
-        if (player.skills[0]) sikillImg[0].gameObject.SetActive(true);
-        if (player.skills[1]) sikillImg[1].gameObject.SetActive(true);
-        if (player.skills[2]) sikillImg[2].gameObject.SetActive(true);
-        if (player.skills[3]) sikillImg[3].gameObject.SetActive(true);
+        // if (player.skills[0]) sikillImg[0].gameObject.SetActive(true);
+        // if (player.skills[1]) sikillImg[1].gameObject.SetActive(true);
+        // if (player.skills[2]) sikillImg[2].gameObject.SetActive(true);
+        // if (player.skills[3]) sikillImg[3].gameObject.SetActive(true);
 
         if (boss != null)
         {

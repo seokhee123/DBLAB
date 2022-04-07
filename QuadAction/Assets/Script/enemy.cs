@@ -246,8 +246,8 @@ public class enemy : MonoBehaviour
                     break;
                 case Type.D:
                     {
-                        player.kill[3]++;
-                        if (player.kill[3] > 0 && (player.skills[0]&& player.skills[1] && player.skills[2])) player.skillpt++;
+                        if (player.skills[0] && player.skills[1] && player.skills[2]) player.kill[3]++;
+                        if (player.kill[3] > 0) player.skillpt++;
                     }
                     break;
             }
