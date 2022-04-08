@@ -39,7 +39,7 @@ public class Eskill : MonoBehaviour
             LbulletRigid.AddForce(BulletLPoint[rand2].transform.forward * 50, ForceMode.VelocityChange);
 
             //¿ÞÂÊ
-
+            //asdf;
             GameObject MiniLBullet = Instantiate(Minibullet, MiniL[i].transform.position, MiniL[i].transform.rotation);
             Rigidbody MiniLRigid = MiniLBullet.GetComponent<Rigidbody>();
             MiniLRigid.AddForce(MiniL[i].transform.forward * 50, ForceMode.VelocityChange);
