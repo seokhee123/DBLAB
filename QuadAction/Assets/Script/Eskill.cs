@@ -24,12 +24,12 @@ public class Eskill : MonoBehaviour
             int rand3 = Random.Range(0, 4);
             isShoot = false;
 
-            // ¿À¸¥ÂÊ ÃÑ¾Ë
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾ï¿½
             GameObject RBulletPrefab = Instantiate(Bullet[rand3], BulletRPoint[rand1].transform.position, BulletRPoint[rand1].transform.rotation);
             Rigidbody RbulletRigid = RBulletPrefab.GetComponent<Rigidbody>();
             RbulletRigid.AddForce(BulletRPoint[rand1].transform.forward * 50, ForceMode.VelocityChange);
 
-            // ¿ÞÂÊ ÃÑ¾Ë
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾ï¿½
             GameObject LBulletPrefab = Instantiate(Bullet[rand3], BulletLPoint[rand2].transform.position, BulletLPoint[rand2].transform.rotation);
             Rigidbody LbulletRigid = LBulletPrefab.GetComponent<Rigidbody>();
             LbulletRigid.AddForce(BulletLPoint[rand2].transform.forward * 50, ForceMode.VelocityChange);
