@@ -7,6 +7,7 @@ public class Grenade : MonoBehaviour
     public GameObject meshObj;
     public GameObject effectObj;
     public Rigidbody rigid;
+    public int sec;
 
     private void Start()
     {
@@ -14,7 +15,7 @@ public class Grenade : MonoBehaviour
     }
     IEnumerator Explosion()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(sec);
         rigid.velocity = Vector3.zero;
         rigid.angularVelocity = Vector3.zero;
         meshObj.SetActive(false);
