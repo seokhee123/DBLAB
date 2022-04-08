@@ -193,8 +193,8 @@ public class enemy : MonoBehaviour
         }
         else if (curHealth <= 0)
         {
-            Player player = target.GetComponent<Player>();
             this.gameObject.layer = 14;
+            Player player = target.GetComponent<Player>();
             if (enemytype == Type.D)
             {
                 manager.isBoss = false;
@@ -254,7 +254,7 @@ public class enemy : MonoBehaviour
             if (isGrenade)
             {
                 reacVec = reacVec.normalized;
-                reacVec += Vector3.up*3;
+                reacVec += Vector3.up*1;
                 rigid.freezeRotation = false;
                 rigid.AddForce(reacVec * 5, ForceMode.Impulse);
                 rigid.AddTorque(reacVec * 15, ForceMode.Impulse);
