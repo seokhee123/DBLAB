@@ -193,10 +193,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8f5e8c741e7f241828241d53ac8d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boom1: {fileID: 7664440296224089918, guid: 5c600bedd9e707e45918999c0521ee90, type: 3}
-  boom2: {fileID: 7664440296224089918, guid: 5c600bedd9e707e45918999c0521ee90, type: 3}
-  boom3: {fileID: 7664440296224089918, guid: 5c600bedd9e707e45918999c0521ee90, type: 3}
-  boom4: {fileID: 7664440296224089918, guid: 5c600bedd9e707e45918999c0521ee90, type: 3}
+  boom1: {fileID: 4500570487988943698, guid: f2a323fb27e9088419bcf5962e439bb3, type: 3}
+  boom2: {fileID: 4500570487988943698, guid: f2a323fb27e9088419bcf5962e439bb3, type: 3}
+  boom3: {fileID: 4500570487988943698, guid: f2a323fb27e9088419bcf5962e439bb3, type: 3}
+  boom4: {fileID: 4500570487988943698, guid: f2a323fb27e9088419bcf5962e439bb3, type: 3}
   boomPos: {fileID: 7570792958710945166}
   boomPos1: {fileID: 7570792958710945166}
   boomPos2: {fileID: 7570792958710945166}
