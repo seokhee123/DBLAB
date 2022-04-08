@@ -198,26 +198,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8f5e8c741e7f241828241d53ac8d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grenade:
-  - {fileID: 3250286561109350883}
-  - {fileID: 5589023481784794052}
-  - {fileID: 4878559687806702820}
-  - {fileID: 8826882152985407593}
---- !u!114 &3734530585442608924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5329488615771752711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bd89e69088cf3b42add5f9b74b6250b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 100
-  isMelee: 0
-  isRock: 0
+  boom1: {fileID: 7664440296224089918, guid: 5c600bedd9e707e45918999c0521ee90, type: 3}
+  boom2: {fileID: 7664440296224089918, guid: 5c600bedd9e707e45918999c0521ee90, type: 3}
+  boom3: {fileID: 7664440296224089918, guid: 5c600bedd9e707e45918999c0521ee90, type: 3}
+  boom4: {fileID: 7664440296224089918, guid: 5c600bedd9e707e45918999c0521ee90, type: 3}
+  boomPos: {fileID: 7570792958710945166}
+  boomPos1: {fileID: 7570792958710945166}
+  boomPos2: {fileID: 7570792958710945166}
+  boomPos3: {fileID: 7570792958710945166}
+  boomPos4: {fileID: 7570792958710945166}
 --- !u!1 &8718683067515764138
 GameObject:
   m_ObjectHideFlags: 0
