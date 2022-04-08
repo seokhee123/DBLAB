@@ -58,13 +58,15 @@ public class Qskill : MonoBehaviour
         //SpotEnemy = enemy.gameObject.transform.position;   
     }*/
 
-    public GameObject boom;
     public GameObject boom1;
     public GameObject boom2;
     public GameObject boom3;
+    public GameObject boom4;
+    public Transform boomPos;
     public Transform boomPos1;
     public Transform boomPos2;
     public Transform boomPos3;
+    public Transform boomPos4;
 
     //Player player;
     void OnTriggerExit(Collider other)
@@ -81,30 +83,41 @@ public class Qskill : MonoBehaviour
 
     IEnumerator Boom()
     {
-        //yield return new WaitForSeconds(1f) ;
-        //boomPos1.position = new Vector3;
-        /*GameObject intantBoom = Instantiate(boom, boomPos1.position, boomPos1.rotation);
-        Rigidbody BoomRigid = intantBoom.GetComponent<Rigidbody>();
-        BoomRigid.velocity = boomPos1.forward * - 50;*/
-        //BoomRigid.transform
-        //Destroy(boom, 3f);
-        
-        //boomPos.position = new Vector3(0, 0, 2);
-        GameObject intantBoom1 = Instantiate(boom1, boomPos2.position, boomPos2.rotation);
+        GameObject intantBoom1 = Instantiate(boom1, boomPos.position, boomPos.rotation);
         Rigidbody Boom1Rigid = intantBoom1.GetComponent<Rigidbody>();
-        Boom1Rigid.velocity = boomPos2.right * 50;
-        Destroy(intantBoom1, 5f);
+        Boom1Rigid.velocity = boomPos.right * 50;
+        Destroy(intantBoom1, 100f);
 
-        /*GameObject intantBoom3 = Instantiate(boom3, boomPos3.position, boomPos2.rotation);
-        Rigidbody Boom3Rigid = intantBoom1.GetComponent<Rigidbody>();
-        Boom1Rigid.velocity = boomPos3.right * 50 + boomPos3.forward * 50;
-        Destroy(boom1, 3f);*/
-
-        //boomPos.position = new Vector3(0, 0, -2);
-        GameObject intantBoom2 = Instantiate(boom2, boomPos3.position, boomPos3.rotation);
+        GameObject intantBoom2 = Instantiate(boom2, boomPos.position, boomPos.rotation);
         Rigidbody Boom2Rigid = intantBoom2.GetComponent<Rigidbody>();
-        Boom2Rigid.velocity = boomPos3.right * -50;
-        Destroy(intantBoom2, 5f);
+        Boom2Rigid.velocity = boomPos.right * -50;
+        Destroy(intantBoom2, 100f);
+
+        GameObject intantBoom3 = Instantiate(boom3, boomPos.position, boomPos.rotation);
+        Rigidbody Boom3Rigid = intantBoom3.GetComponent<Rigidbody>();
+        Boom3Rigid.velocity = boomPos.forward * 50;
+        Destroy(intantBoom3, 100f);
+
+        GameObject intantBoom4 = Instantiate(boom4, boomPos.position, boomPos.rotation);
+        Rigidbody Boom4Rigid = intantBoom4.GetComponent<Rigidbody>();
+        Boom4Rigid.velocity = boomPos.forward * -50;
+        Destroy(intantBoom4, 100f);
+
+        GameObject intantBoom5 = Instantiate(boom1, boomPos.position, boomPos.rotation);
+        Rigidbody Boom5Rigid = intantBoom5.GetComponent<Rigidbody>();
+        Boom5Rigid.velocity = boomPos.forward * 50 + boomPos.right * -50;
+
+        GameObject intantBoom6 = Instantiate(boom1, boomPos.position, boomPos.rotation);
+        Rigidbody Boom6Rigid = intantBoom6.GetComponent<Rigidbody>();
+        Boom6Rigid.velocity = boomPos.forward * 50 + boomPos.right * 50;
+
+        GameObject intantBoom7 = Instantiate(boom1, boomPos.position, boomPos.rotation);
+        Rigidbody Boom7Rigid = intantBoom7.GetComponent<Rigidbody>();
+        Boom7Rigid.velocity = boomPos.forward * -50 + boomPos.right * -50;
+
+        GameObject intantBoom8 = Instantiate(boom1, boomPos.position, boomPos.rotation);
+        Rigidbody Boom8Rigid = intantBoom8.GetComponent<Rigidbody>();
+        Boom8Rigid.velocity = boomPos.forward * -50 + boomPos.right * 50;
 
         yield return null;
     }

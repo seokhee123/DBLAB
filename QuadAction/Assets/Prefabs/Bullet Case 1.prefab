@@ -110,13 +110,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8f5e8c741e7f241828241d53ac8d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boom: {fileID: 6491714463615967890, guid: b0ddf75e9e9bfdf47b51b652f14ec581, type: 3}
-  boom1: {fileID: 6491714463615967890, guid: b0ddf75e9e9bfdf47b51b652f14ec581, type: 3}
-  boom2: {fileID: 6491714463615967890, guid: b0ddf75e9e9bfdf47b51b652f14ec581, type: 3}
-  boom3: {fileID: 6491714463615967890, guid: b0ddf75e9e9bfdf47b51b652f14ec581, type: 3}
+  boom1: {fileID: 4391530085988653607, guid: 8999245a3fe464c48a99d2f830a9c2c5, type: 3}
+  boom2: {fileID: 4391530085988653607, guid: 8999245a3fe464c48a99d2f830a9c2c5, type: 3}
+  boom3: {fileID: 4391530085988653607, guid: 8999245a3fe464c48a99d2f830a9c2c5, type: 3}
+  boom4: {fileID: 4391530085988653607, guid: 8999245a3fe464c48a99d2f830a9c2c5, type: 3}
+  boomPos: {fileID: 2743959442741835048}
   boomPos1: {fileID: 8810028235920326943}
   boomPos2: {fileID: 7989038638264940194}
   boomPos3: {fileID: 6878527382708968921}
+  boomPos4: {fileID: 6878527382708968921}
 --- !u!195 &4623024366704453422
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -154,11 +156,6 @@ MonoBehaviour:
   damage: 9999
   isMelee: 0
   isRock: 0
-  findEnemy: {fileID: 0}
-  FoundObjects: []
-  enemy: {fileID: 0}
-  TagName: 
-  shortDis: 0
 --- !u!1 &6225564268656765788
 GameObject:
   m_ObjectHideFlags: 0

@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 8718683066587704781}
   - component: {fileID: 8718683066587704780}
   m_Layer: 15
-  m_Name: Missile Boss
+  m_Name: Missile Boss 1
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
