@@ -4888,7 +4888,6 @@ GameObject:
   - component: {fileID: 7689375103525916756}
   - component: {fileID: -4595010051157404339}
   - component: {fileID: 3004253862391755098}
-  - component: {fileID: -3397673136833574694}
   m_Layer: 10
   m_Name: Grenade Explosion
   m_TagString: Untagged
@@ -9782,18 +9781,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-3397673136833574694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4500570487988943698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46cf344dacee2f54bbe6f6181d49ef38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meshObj: {fileID: 4500570487988943698}
-  effectObj: {fileID: 4500570487988943698}
-  rigid: {fileID: -4595010051157404339}
