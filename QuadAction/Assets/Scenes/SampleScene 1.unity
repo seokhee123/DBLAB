@@ -26788,7 +26788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5461052779654786451, guid: 8f5e135a19626f544908fc8f156144b9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5461052779654786451, guid: 8f5e135a19626f544908fc8f156144b9, type: 3}
       propertyPath: m_TagString
@@ -64694,7 +64694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2120605185
 Transform:
   m_ObjectHideFlags: 0
@@ -64741,6 +64741,9 @@ MonoBehaviour:
   - {fileID: 6491714463615967890, guid: 65ae12f63e0c34146a3e52d461d4c651, type: 3}
   - {fileID: 6491714463615967890, guid: b0ddf75e9e9bfdf47b51b652f14ec581, type: 3}
   isShoot: 1
+  Minibullet: {fileID: 0}
+  MiniL: []
+  MiniR: []
 --- !u!1 &2121844807
 GameObject:
   m_ObjectHideFlags: 0
