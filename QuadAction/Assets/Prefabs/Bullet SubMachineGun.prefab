@@ -143,8 +143,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.02627945
-        value: 0.05376053
+        time: 0.008811951
+        value: 0.60399246
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -152,8 +152,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.9792746
-        value: 0
+        time: 0.9508932
+        value: 0.583725
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -165,8 +165,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.25108108, g: 0.23921566, b: 0.6431373, a: 1}
-      key1: {r: 0.26286325, g: 0.8490566, b: 0.15619439, a: 0.19607843}
+      key0: {r: 0.4206059, g: 1, b: 0, a: 1}
+      key1: {r: 0.26286325, g: 0.8490566, b: 0.15619439, a: 1}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -245,12 +245,6 @@ MonoBehaviour:
   damage: 10
   isMelee: 0
   isRock: 0
-  findEnemy: {fileID: 4602591569290309511}
-  FoundObjects: []
-  enemy: {fileID: 0}
-  TagName: Bullet
-  shortDis: 0
-  navi: {fileID: -1718589566048391562}
 --- !u!195 &-1718589566048391562
 NavMeshAgent:
   m_ObjectHideFlags: 0
