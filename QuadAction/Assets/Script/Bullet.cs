@@ -10,7 +10,8 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, 5);
+        if (!isMelee)
+            Destroy(gameObject, 5);
     }
     void OnCollisionEnter(Collision collision)
     {

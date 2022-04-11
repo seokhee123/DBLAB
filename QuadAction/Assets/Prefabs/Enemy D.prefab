@@ -734,7 +734,7 @@ MonoBehaviour:
   mat: []
   nav: {fileID: 6023200178708114301}
   anim: {fileID: 6756802070878159094}
-  missile: {fileID: 5329488615771752711, guid: 978d3626c5f3f614b9dbe908ca0b3e0d, type: 3}
+  missile: {fileID: 5329488615771752711, guid: ba3bc3f5654e59b41b4b643d3a336a6a, type: 3}
   misslilePortA: {fileID: 5297344811042260513}
   misslilePortB: {fileID: 2830556822268751208}
   isLook: 1
