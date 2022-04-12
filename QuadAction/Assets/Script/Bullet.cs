@@ -7,29 +7,23 @@ public class Bullet : MonoBehaviour
     public double damage;
     public bool isMelee;
     public bool isRock;
+    public bool isRocket;
 
     void Start()
     {
-        if (!isMelee)
+        if (!isMelee && !isRocket)
             Destroy(gameObject, 5);
     }
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (!isRock && collision.gameObject.tag == "Floor")
+        if (!isRocket && !isRock && other.gameObject.tag == "Floor")
         {
             Destroy(gameObject, 3);
         }
-        else if (collision.gameObject.tag == "Wall")
+        else if (!isRocket && other.gameObject.tag == "Wall")
         {
             Destroy(gameObject);
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (!isMelee && other.gameObject.tag == "Wall")
-        {
-            Destroy(gameObject, 0);
-        }
-    }
 }

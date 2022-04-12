@@ -7,8 +7,8 @@ public class Grenade : MonoBehaviour
     public GameObject meshObj;
     public GameObject effectObj;
     public Rigidbody rigid;
-    public int sec;
-
+    public float sec;
+    public bool isExplode;
     private void Start()
     {
         StartCoroutine(Explosion());
@@ -18,6 +18,7 @@ public class Grenade : MonoBehaviour
         yield return new WaitForSeconds(sec);
         rigid.velocity = Vector3.zero;
         rigid.angularVelocity = Vector3.zero;
+        
         meshObj.SetActive(false);
         effectObj.SetActive(true);
 

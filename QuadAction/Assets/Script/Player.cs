@@ -23,7 +23,6 @@ public class Player : MonoBehaviour
     public int coin;
     public double health;
     public int score;
-    //public GameObject Qskill;
     Qskill qs;
     public int[] kill;
     public int skillpt;
@@ -164,9 +163,10 @@ public class Player : MonoBehaviour
 
     IEnumerator Fire()
     {
+        int speed = 20;
         GameObject intantQskill = Instantiate(qskill, qskillPos.position, qskillPos.rotation);
         Rigidbody qskill1Rigid = intantQskill.GetComponent<Rigidbody>();
-        qskill1Rigid.velocity = qskillPos.forward * 50;
+        qskill1Rigid.velocity = qskillPos.forward * speed;
         yield return null;
     }
     void Move()

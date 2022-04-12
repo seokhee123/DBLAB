@@ -149,7 +149,7 @@ public class enemy : MonoBehaviour
         Targeting();
         FreezeVelocity();    
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (!isDamage)
         {
@@ -173,12 +173,14 @@ public class enemy : MonoBehaviour
             }
         }
     }
+
     public void HitByGrenade(Vector3 explosionPos)
     {
-        curHealth -= 9999999999;
+        curHealth -= 100;
         Vector3 reactVec = transform.position - explosionPos;
         StartCoroutine(OnDamage(reactVec, true));
     }
+
     IEnumerator OnDamage(Vector3 reacVec, bool isGrenade)
     {   
         foreach (MeshRenderer mesh in mat) 
@@ -193,8 +195,8 @@ public class enemy : MonoBehaviour
         }
         else if (curHealth <= 0)
         {
-            Player player = target.GetComponent<Player>();
             this.gameObject.layer = 14;
+            Player player = target.GetComponent<Player>();
             if (enemytype == Type.D)
             {
                 manager.isBoss = false;
@@ -245,13 +247,13 @@ public class enemy : MonoBehaviour
                     }
                     break;
                 case Type.D:
+                    if (!player.skills[3]) 
                     {
-                        if (!player.skills[3] && player.skills[0] && player.skills[1] && player.skills[2]) player.kill[3]++;
-                        if (player.kill[3] > 0) player.skillpt++;
+                        player.skillpt++;
                     }
                     break;
             }
-            if (isGrenade)
+            if (isGrenade && !isDamage)
             {
                 reacVec = reacVec.normalized;
                 reacVec += Vector3.up*3;
