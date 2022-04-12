@@ -19104,7 +19104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &565058488
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -21608,7 +21608,7 @@ MonoBehaviour:
   isLevel: 0
   isSkill: 0
   isDead: 0
-  skills: 01000000
+  skills: 00000000
   toggle: 0
   EskillGroup: {fileID: 2120605184}
   esk: {fileID: 2120605186}

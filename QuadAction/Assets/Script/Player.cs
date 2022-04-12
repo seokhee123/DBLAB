@@ -162,7 +162,7 @@ public class Player : MonoBehaviour
             StartCoroutine("Fire");
             manager.sikillImg[0].color = Color.gray;
             manager.isCool[0] = true;
-            Invoke("QskillStop", 3f);
+            Invoke("QskillStop", 1f);
             manager.skillcooltxt[0].gameObject.SetActive(true);
         }
     }

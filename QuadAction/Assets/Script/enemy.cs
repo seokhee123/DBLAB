@@ -27,7 +27,7 @@ public class enemy : MonoBehaviour
     public MeshRenderer[] mat;
     public NavMeshAgent nav;
     public Animator anim;
-
+   
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
@@ -151,7 +151,7 @@ public class enemy : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (!isDamage)
+        if (!isDamage && !isDead)
         {
             if (other.tag == "Melee")
             {
@@ -176,98 +176,106 @@ public class enemy : MonoBehaviour
 
     public void HitByGrenade(Vector3 explosionPos)
     {
-        curHealth -= 100;
-        Vector3 reactVec = transform.position - explosionPos;
-        StartCoroutine(OnDamage(reactVec, true));
+        if (!isDead)
+        {
+            curHealth -= 100;
+            Vector3 reactVec = transform.position - explosionPos;
+            StartCoroutine(OnDamage(reactVec, true));
+        }
+    
     }
 
     IEnumerator OnDamage(Vector3 reacVec, bool isGrenade)
     {   
-        foreach (MeshRenderer mesh in mat) 
-            mesh.material.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
-
-        if (curHealth > 0)
+        if (!isDead)
         {
             foreach (MeshRenderer mesh in mat)
-                mesh.material.color = Color.white;
-            isDamage = false;
-        }
-        else if (curHealth <= 0)
-        {
-            this.gameObject.layer = 14;
-            Player player = target.GetComponent<Player>();
-            if (enemytype == Type.D)
-            {
-                manager.isBoss = false;
-            }
-            foreach (MeshRenderer mesh in mat)
-                mesh.material.color= Color.gray;
-            isDead = true;
-            isChase = false;
-            nav.enabled = false;
-            anim.SetTrigger("doDie");
-            player.score += score;
-            if (!(player.meleeLevel == 20 && player.rangeLevel == 20 && player.healthLevel == 20))
-                player.exp += enemyexp;
-            int ranCoin = Random.Range(0, 100);
-            int itemDrop;
-            if (ranCoin >= 0 && ranCoin <= 24)
-            {
-                itemDrop = 0;
-                Instantiate(coins[itemDrop], transform.position, Quaternion.identity);
+                mesh.material.color = Color.red;
+            yield return new WaitForSeconds(0.1f);
 
-            }
-            else if (ranCoin >= 25 && ranCoin <= 49)
+            if (curHealth > 0)
             {
-                itemDrop = 1;
-                Instantiate(coins[itemDrop], transform.position, Quaternion.identity);
+                foreach (MeshRenderer mesh in mat)
+                    mesh.material.color = Color.white;
+                isDamage = false;
             }
-            switch (enemytype)
+            else if (curHealth <= 0)
             {
-                case Type.A:
-                    if (player.kill[0] < 10)
-                    {
-                        player.kill[0]++;
-                        if (player.kill[0] == 10) player.skillpt++;
-                    } 
-                    break;
-                case Type.B:
-                    if (player.kill[1] < 10)
-                    {
-                        player.kill[1]++;
-                        if (player.kill[1] == 10) player.skillpt++;
-                    }
-                    break;
-                case Type.C:
-                    if (player.kill[2] < 10)
-                    {
-                        player.kill[2]++;
-                        if (player.kill[2] == 10) player.skillpt++;
-                    }
-                    break;
-                case Type.D:
-                    if (!player.skills[3]) 
-                    {
-                        player.skillpt++;
-                    }
-                    break;
-            }
-            if (isGrenade && !isDamage)
-            {
-                reacVec = reacVec.normalized;
-                reacVec += Vector3.up*3;
-                rigid.freezeRotation = false;
-                rigid.AddForce(reacVec * 5, ForceMode.Impulse);
-                rigid.AddTorque(reacVec * 15, ForceMode.Impulse);
-            }
-            else
-            {
-                reacVec = reacVec.normalized;
-                reacVec += Vector3.up;
-                rigid.AddForce(reacVec * 5, ForceMode.Impulse);
-            }
+                isDead = true;
+                this.gameObject.layer = 14;
+                Player player = target.GetComponent<Player>();
+                if (enemytype == Type.D)
+                {
+                    manager.isBoss = false;
+                }
+                foreach (MeshRenderer mesh in mat)
+                    mesh.material.color = Color.gray;
+                isChase = false;
+                nav.enabled = false;
+                anim.SetTrigger("doDie");
+                player.score += score;
+                if (!(player.meleeLevel == 20 && player.rangeLevel == 20 && player.healthLevel == 20))
+                    player.exp += enemyexp;
+                int ranCoin = Random.Range(0, 100);
+                int itemDrop;
+                if (ranCoin >= 0 && ranCoin <= 24)
+                {
+                    itemDrop = 0;
+                    Instantiate(coins[itemDrop], transform.position, Quaternion.identity);
+
+                }
+                else if (ranCoin >= 25 && ranCoin <= 49)
+                {
+                    itemDrop = 1;
+                    Instantiate(coins[itemDrop], transform.position, Quaternion.identity);
+                }
+                switch (enemytype)
+                {
+                    case Type.A:
+                        if (player.kill[0] < 10)
+                        {
+                            player.kill[0]++;
+                            if (player.kill[0] == 10) player.skillpt++;
+                        }
+                        break;
+                    case Type.B:
+                        if (player.kill[1] < 10)
+                        {
+                            player.kill[1]++;
+                            if (player.kill[1] == 10) player.skillpt++;
+                        }
+                        break;
+                    case Type.C:
+                        if (player.kill[2] < 10)
+                        {
+                            player.kill[2]++;
+                            if (player.kill[2] == 10) player.skillpt++;
+                        }
+                        break;
+                    case Type.D:
+                        if (!player.skills[3])
+                        {
+                            player.skillpt++;
+                        }
+                        break;
+                }
+                if (isGrenade && !isDamage)
+                {
+                    reacVec = reacVec.normalized;
+                    reacVec += Vector3.up * 3;
+                    rigid.freezeRotation = false;
+                    rigid.AddForce(reacVec * 5, ForceMode.Impulse);
+                    rigid.AddTorque(reacVec * 15, ForceMode.Impulse);
+                }
+                else
+                {
+                    reacVec = reacVec.normalized;
+                    reacVec += Vector3.up;
+                    rigid.AddForce(reacVec * 5, ForceMode.Impulse);
+                }
                 Destroy(gameObject, 3f);
-        }   
+            }
+        }
+
     }
 }
