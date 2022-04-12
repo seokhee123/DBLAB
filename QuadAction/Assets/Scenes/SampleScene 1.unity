@@ -15136,8 +15136,8 @@ Transform:
   - {fileID: 164608290}
   - {fileID: 1337758501}
   - {fileID: 2045092849}
-  - {fileID: 691487830}
   - {fileID: 412879985}
+  - {fileID: 691487830}
   m_Father: {fileID: 2120605185}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15586,7 +15586,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 373817245}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &413625207
 PrefabInstance:
@@ -20769,7 +20769,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 373817245}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &692675893
 GameObject:
@@ -65257,6 +65257,9 @@ MonoBehaviour:
   - {fileID: 717439667}
   - {fileID: 765160754}
   - {fileID: 1254838942}
+  BulletCase: {fileID: 4391530085988653607, guid: 8999245a3fe464c48a99d2f830a9c2c5, type: 3}
+  CasePosL: {fileID: 412879984}
+  CasePosR: {fileID: 691487829}
 --- !u!1 &2121844807
 GameObject:
   m_ObjectHideFlags: 0

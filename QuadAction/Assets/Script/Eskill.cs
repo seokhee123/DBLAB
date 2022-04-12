@@ -13,6 +13,12 @@ public class Eskill : MonoBehaviour
     public GameObject[] MiniL;
     public GameObject[] MiniR;
     int i = 0;
+
+    public GameObject BulletCase;
+    public GameObject CasePosL;
+    public GameObject CasePosR;
+
+
     void Update()
     {
         Shoot();
@@ -47,6 +53,18 @@ public class Eskill : MonoBehaviour
             GameObject MiniRBullet = Instantiate(Minibullet, MiniR[i].transform.position, MiniR[i].transform.rotation);
             Rigidbody MiniRRigid = MiniRBullet.GetComponent<Rigidbody>();
             MiniRRigid.AddForce(MiniR[i].transform.forward * 50, ForceMode.VelocityChange);
+
+            // 탄피
+            // 오른쪽
+            GameObject BulletCaseR = Instantiate(BulletCase, CasePosR.transform.position, CasePosR.transform.rotation);
+            Rigidbody CaseRRigid = BulletCaseR.GetComponent<Rigidbody>();
+            CaseRRigid.AddForce(CasePosR.transform.right * 3, ForceMode.VelocityChange);
+            Destroy(BulletCaseR, 3f);
+            //왼쪽
+            GameObject BulletCaseL = Instantiate(BulletCase, CasePosL.transform.position, CasePosL.transform.rotation);
+            Rigidbody CaseLRigid = BulletCaseL.GetComponent<Rigidbody>();
+            CaseLRigid.AddForce(CasePosL.transform.right * -3, ForceMode.VelocityChange);
+            Destroy(BulletCaseL, 3f);
 
 
             StartCoroutine(CoolDown());
