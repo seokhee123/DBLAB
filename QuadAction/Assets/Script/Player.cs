@@ -78,8 +78,10 @@ public class Player : MonoBehaviour
     float fireDelay;
     Dictionary<string, int> scoredata = new Dictionary<string, int>();
 
-    public Transform qskillPos;
+    public Transform qskillLPos;
+    public Transform qskillRPos;
     public GameObject qskill;
+    public GameObject rocketObj;
 
     void Awake()
     {
@@ -154,20 +156,41 @@ public class Player : MonoBehaviour
     {
         if (skills[0] && !manager.isCool[0] && qDown)
         {
+            anim.SetTrigger("doSwap");
+            isSwap = true;
+            Invoke("SwapOut", 0.4f);
             StartCoroutine("Fire");
             manager.sikillImg[0].color = Color.gray;
             manager.isCool[0] = true;
+            Invoke("QskillStop", 3f);
             manager.skillcooltxt[0].gameObject.SetActive(true);
         }
     }
 
+    void QskillStop()
+    {
+        rocketObj.SetActive(false);
+    }
+
     IEnumerator Fire()
     {
-        int speed = 20;
-        GameObject intantQskill = Instantiate(qskill, qskillPos.position, qskillPos.rotation);
-        Rigidbody qskill1Rigid = intantQskill.GetComponent<Rigidbody>();
-        qskill1Rigid.velocity = qskillPos.forward * speed;
+        rocketObj.SetActive(true);
+
+        // 왼쪽 미사일
+        GameObject intantQskillL = Instantiate(qskill, qskillLPos.position, qskillLPos.rotation);
+        Rigidbody qskillLRigid = intantQskillL.GetComponent<Rigidbody>();
+        qskillLRigid.velocity = qskillLPos.forward * 50;
+
+        // 오른쪽 미사일
+        Invoke("RocketDelay", 0.1f);
         yield return null;
+    }
+
+    void RocketDelay()
+    {
+        GameObject intantQskillR = Instantiate(qskill, qskillRPos.position, qskillRPos.rotation);
+        Rigidbody qskillRRigid = intantQskillR.GetComponent<Rigidbody>();
+        qskillRRigid.velocity = qskillRPos.forward * 50;
     }
     void Move()
     {
