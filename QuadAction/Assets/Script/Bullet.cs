@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        if (!isMelee && !isRocket)
+        if (!isMelee || isRocket)
             Destroy(gameObject, 5);
     }
     void OnTriggerEnter(Collider other)
