@@ -451,7 +451,16 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Item")
+        if (other.tag == "Obstacle")
+        {
+            Renderer ObsMesh;
+            ObsMesh = other.gameObject.GetComponent<Renderer>();
+            Color c = ObsMesh.material.color;
+            c.a = 0.1f;
+            ObsMesh.material.color = c;
+        }
+
+        if (other.tag == "Item")
         {
             Item item = other.GetComponent<Item>();
             switch (item.type)

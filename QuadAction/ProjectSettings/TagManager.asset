@@ -15,6 +15,7 @@ TagManager:
   - EnemyBullet
   - Shop
   - Die
+  - Obstacle
   layers:
   - Default
   - TransparentFX
