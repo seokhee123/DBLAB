@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class enemy : MonoBehaviour
 {
     public enum Type { A, B, C, D };
-    public Type enemytype;
+    public Type enemytype; 
     public int maxHealth;
     public double curHealth;
     public int score;

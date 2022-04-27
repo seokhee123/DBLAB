@@ -189,8 +189,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 8.62, z: 2.5}
-  m_Center: {x: 0, y: 1.13, z: 0}
+  m_Size: {x: 2.5, y: 3.1173835, z: 2.5}
+  m_Center: {x: 0, y: 1.4404109, z: 0}
 --- !u!195 &1160587298609802889
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -696,6 +696,7 @@ MonoBehaviour:
   damage: 10
   isMelee: 1
   isRock: 0
+  isRocket: 0
 --- !u!1 &8887315985058284600
 GameObject:
   m_ObjectHideFlags: 0
