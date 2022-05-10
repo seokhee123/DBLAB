@@ -14,7 +14,8 @@ public class Boss : enemy
 
     private void Awake()
     {
-        //asdfasdasas
+        //asdfasdasas  
+        //dasdd
         rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
         mat = GetComponentsInChildren<MeshRenderer>();
