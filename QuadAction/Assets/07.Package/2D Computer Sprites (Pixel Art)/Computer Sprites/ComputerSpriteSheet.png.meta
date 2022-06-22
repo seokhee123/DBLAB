@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1012,6 +1013,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ComputerSpriteSheet_9: 7821413948656206618
+      ComputerSpriteSheet_23: -506937675372913918
+      ComputerSpriteSheet_29: 3307903308962460038
+      ComputerSpriteSheet_32: 8515321505236956855
+      ComputerSpriteSheet_24: 566004426044776538
+      ComputerSpriteSheet_28: -89774305892525958
+      ComputerSpriteSheet_34: 435416330463981581
+      ComputerSpriteSheet_11: 542869581381633756
+      ComputerSpriteSheet_33: -5608333992069262451
+      ComputerSpriteSheet_30: -8514038368062561665
+      ComputerSpriteSheet_16: -3641607009366420296
+      ComputerSpriteSheet_13: -3144291507723054135
+      ComputerSpriteSheet_10: 8147634167758236369
+      ComputerSpriteSheet_35: 2592733815924544266
+      ComputerSpriteSheet_21: -2254001712554385577
+      ComputerSpriteSheet_15: -517697894013263331
+      ComputerSpriteSheet_17: 614155955090752123
+      ComputerSpriteSheet_5: -1642413240749559686
+      ComputerSpriteSheet_12: 2515554377397359813
+      ComputerSpriteSheet_1: 4074312653934826052
+      ComputerSpriteSheet_2: -6109709056750610522
+      ComputerSpriteSheet_27: -1961292040839942873
+      ComputerSpriteSheet_8: -3183198228667608947
+      ComputerSpriteSheet_20: 881276130300915730
+      ComputerSpriteSheet_0: 2100637892464646520
+      ComputerSpriteSheet_18: -4448602983907902232
+      ComputerSpriteSheet_19: 1093900353238984923
+      ComputerSpriteSheet_25: -8343823342080117072
+      ComputerSpriteSheet_26: -3077186815018788423
+      ComputerSpriteSheet_31: 6389763714493229214
+      ComputerSpriteSheet_14: -2610589759378007955
+      ComputerSpriteSheet_22: -2381116152052234498
+      ComputerSpriteSheet_3: -701321893011670654
+      ComputerSpriteSheet_4: 8271581654393589300
+      ComputerSpriteSheet_7: -9097885865353959008
+      ComputerSpriteSheet_6: 6632709916688194559
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

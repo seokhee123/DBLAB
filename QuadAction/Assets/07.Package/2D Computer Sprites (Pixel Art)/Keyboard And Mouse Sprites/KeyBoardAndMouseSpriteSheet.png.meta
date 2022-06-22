@@ -273,6 +273,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -2140,6 +2141,90 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      KeyBoardAndMouseSpriteSheet_62: -8984307092688144322
+      KeyBoardAndMouseSpriteSheet_35: 155321204425953070
+      KeyBoardAndMouseSpriteSheet_54: -3784366069222489784
+      KeyBoardAndMouseSpriteSheet_25: 1710861328682202855
+      KeyBoardAndMouseSpriteSheet_65: 8281929810169664966
+      KeyBoardAndMouseSpriteSheet_66: 4175231185457312989
+      KeyBoardAndMouseSpriteSheet_32: -2844943510717966188
+      KeyBoardAndMouseSpriteSheet_73: -5858224371864567721
+      KeyBoardAndMouseSpriteSheet_50: 814990361242840472
+      KeyBoardAndMouseSpriteSheet_70: -1479946421648635592
+      KeyBoardAndMouseSpriteSheet_22: 1808540749825555704
+      KeyBoardAndMouseSpriteSheet_29: -3399521879829102428
+      KeyBoardAndMouseSpriteSheet_48: -7599299270696783763
+      KeyBoardAndMouseSpriteSheet_74: -220246174609516412
+      KeyBoardAndMouseSpriteSheet_79: -8420307333282926615
+      KeyBoardAndMouseSpriteSheet_21: 5532019046478649472
+      KeyBoardAndMouseSpriteSheet_30: -5309740840624007570
+      KeyBoardAndMouseSpriteSheet_34: -8721664357289987131
+      KeyBoardAndMouseSpriteSheet_14: -121713584981775596
+      KeyBoardAndMouseSpriteSheet_46: 8996600039586236408
+      KeyBoardAndMouseSpriteSheet_78: 4959510200640668605
+      KeyBoardAndMouseSpriteSheet_64: 8743425525525752905
+      KeyBoardAndMouseSpriteSheet_71: -8930256894397151141
+      KeyBoardAndMouseSpriteSheet_42: 1323673322147683501
+      KeyBoardAndMouseSpriteSheet_56: 1244016325553886007
+      KeyBoardAndMouseSpriteSheet_6: 3761668201487035685
+      KeyBoardAndMouseSpriteSheet_58: 3014907943160834427
+      KeyBoardAndMouseSpriteSheet_76: 3846271181157613566
+      KeyBoardAndMouseSpriteSheet_12: 7092336451498856459
+      KeyBoardAndMouseSpriteSheet_67: -8057343701122788437
+      KeyBoardAndMouseSpriteSheet_31: 4489266162168389896
+      KeyBoardAndMouseSpriteSheet_63: -429284121624008267
+      KeyBoardAndMouseSpriteSheet_33: -1221274292180495554
+      KeyBoardAndMouseSpriteSheet_47: 4177005514519010211
+      KeyBoardAndMouseSpriteSheet_23: 3644756246340118221
+      KeyBoardAndMouseSpriteSheet_15: -705714699267222428
+      KeyBoardAndMouseSpriteSheet_28: 7959629314840612955
+      KeyBoardAndMouseSpriteSheet_9: 156811796435622116
+      KeyBoardAndMouseSpriteSheet_10: -5697590628064559593
+      KeyBoardAndMouseSpriteSheet_49: -3601588998670093032
+      KeyBoardAndMouseSpriteSheet_5: -4563054924272969433
+      KeyBoardAndMouseSpriteSheet_57: -496129082834383802
+      KeyBoardAndMouseSpriteSheet_11: -5618183361924004642
+      KeyBoardAndMouseSpriteSheet_75: 1270461179853570917
+      KeyBoardAndMouseSpriteSheet_81: -478187592840882892
+      KeyBoardAndMouseSpriteSheet_41: 1490808393292074824
+      KeyBoardAndMouseSpriteSheet_36: 3673328251921134715
+      KeyBoardAndMouseSpriteSheet_3: 5763365855357436898
+      KeyBoardAndMouseSpriteSheet_19: 5061117620217402901
+      KeyBoardAndMouseSpriteSheet_20: -4907225802457007852
+      KeyBoardAndMouseSpriteSheet_69: -3787788687160529294
+      KeyBoardAndMouseSpriteSheet_45: -7395671594842335500
+      KeyBoardAndMouseSpriteSheet_18: -7989924265490726275
+      KeyBoardAndMouseSpriteSheet_51: -7025398693694951102
+      KeyBoardAndMouseSpriteSheet_52: 7456726275562031673
+      KeyBoardAndMouseSpriteSheet_60: -5011640345347545058
+      KeyBoardAndMouseSpriteSheet_82: -5827991586607648200
+      KeyBoardAndMouseSpriteSheet_40: -436685019681543512
+      KeyBoardAndMouseSpriteSheet_0: -1700071174462883472
+      KeyBoardAndMouseSpriteSheet_27: -7290739537272599895
+      KeyBoardAndMouseSpriteSheet_53: -410400286300928201
+      KeyBoardAndMouseSpriteSheet_8: -9079330352675362070
+      KeyBoardAndMouseSpriteSheet_39: -6015721612354166309
+      KeyBoardAndMouseSpriteSheet_24: 7589766098430536178
+      KeyBoardAndMouseSpriteSheet_44: -2968767697117026547
+      KeyBoardAndMouseSpriteSheet_43: -8014037561647756460
+      KeyBoardAndMouseSpriteSheet_68: 5799500824075834591
+      KeyBoardAndMouseSpriteSheet_7: -8670941272173137633
+      KeyBoardAndMouseSpriteSheet_4: -6157180006724063294
+      KeyBoardAndMouseSpriteSheet_13: -5408679125851603676
+      KeyBoardAndMouseSpriteSheet_80: -158829221869784024
+      KeyBoardAndMouseSpriteSheet_1: 7082860471761336846
+      KeyBoardAndMouseSpriteSheet_37: -8122572254085053219
+      KeyBoardAndMouseSpriteSheet_72: -8520875899519547916
+      KeyBoardAndMouseSpriteSheet_55: 5703503173904022472
+      KeyBoardAndMouseSpriteSheet_59: 6071636933377360064
+      KeyBoardAndMouseSpriteSheet_77: 4802991544916055974
+      KeyBoardAndMouseSpriteSheet_17: -5233112287513637918
+      KeyBoardAndMouseSpriteSheet_16: -5638883103255677379
+      KeyBoardAndMouseSpriteSheet_26: -6664487372753715812
+      KeyBoardAndMouseSpriteSheet_38: 3539774088863864325
+      KeyBoardAndMouseSpriteSheet_61: -2522884771873784612
+      KeyBoardAndMouseSpriteSheet_2: 5448590229495027887
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
